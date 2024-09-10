@@ -1,0 +1,2362 @@
+[
+    {
+        "protons": 1,
+        "mass": 1.0079,
+        "symbol": "H",
+        "electron": "1s^1",
+        "group": "1",
+        "family": "1A",
+        "period": "1",
+        "block": "s",
+        "type": "alkali",
+        "ptBR": {
+            "name": "Hidrogênio"
+        },
+        "enUS": {
+            "name": "Hydrogen"
+        },
+        "esES": {
+            "name": "Hidrógeno"
+        }
+    },
+    {
+        "protons": 2,
+        "mass": 4.0026,
+        "symbol": "He",
+        "electron": "1s^2",
+        "group": "18",
+        "family": "18",
+        "period": "1",
+        "block": "s",
+        "type": "nobleGas",
+        "ptBR": {
+            "name": "Hélio"
+        },
+        "enUS": {
+            "name": "Helium"
+        },
+        "esES": {
+            "name": "Helio"
+        }
+    },
+    {
+        "protons": 3,
+        "mass": 6.941,
+        "symbol": "Li",
+        "electron": "1s^2 2s^1",
+        "group": "1",
+        "family": "1A",
+        "period": "2",
+        "block": "s",
+        "type": "alkali",
+        "ptBR": {
+            "name": "Lítio"
+        },
+        "enUS": {
+            "name": "Lithium"
+        },
+        "esES": {
+            "name": "Litio"
+        }
+    },
+    {
+        "protons": 4,
+        "mass": 9.0122,
+        "symbol": "Be",
+        "electron": "1s^2 2s^2",
+        "group": "2",
+        "family": "2A",
+        "period": "2",
+        "block": "s",
+        "type": "alkaliEarth",
+        "ptBR": {
+            "name": "Berílio"
+        },
+        "enUS": {
+            "name": "Beryllium"
+        },
+        "esES": {
+            "name": "Berilio"
+        }
+    },
+    {
+        "protons": 5,
+        "mass": 10.811,
+        "symbol": "B",
+        "electron": "1s^2 2s^2 2p^1",
+        "group": "13",
+        "family": "3A",
+        "period": "2",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Boro"
+        },
+        "enUS": {
+            "name": "Boron"
+        },
+        "esES": {
+            "name": "Boro"
+        }
+    },
+    {
+        "protons": 6,
+        "mass": 12.011,
+        "symbol": "C",
+        "electron": "1s^2 2s^2 2p^2",
+        "group": "14",
+        "family": "4A",
+        "period": "2",
+        "block": "p",
+        "type": "nonMetal",
+        "ptBR": {
+            "name": "Carbono"
+        },
+        "enUS": {
+            "name": "Carbon"
+        },
+        "esES": {
+            "name": "Carbono"
+        }
+    },
+    {
+        "protons": 7,
+        "mass": 14.0067,
+        "symbol": "N",
+        "electron": "1s^2 2s^2 2p^3",
+        "group": "15",
+        "family": "5A",
+        "period": "2",
+        "block": "p",
+        "type": "nonMetal",
+        "ptBR": {
+            "name": "Nitrogênio"
+        },
+        "enUS": {
+            "name": "Nitrogen"
+        },
+        "esES": {
+            "name": "Nitrógeno"
+        }
+    },
+    {
+        "protons": 8,
+        "mass": 15.9994,
+        "symbol": "O",
+        "electron": "1s^2 2s^2 2p^4",
+        "group": "16",
+        "family": "6A",
+        "period": "2",
+        "block": "p",
+        "type": "nonMetal",
+        "ptBR": {
+            "name": "Oxigênio"
+        },
+        "enUS": {
+            "name": "Oxygen"
+        },
+        "esES": {
+            "name": "Oxígeno"
+        }
+    },
+    {
+        "protons": 9,
+        "mass": 18.9984,
+        "symbol": "F",
+        "electron": "1s^2 2s^2 2p^5",
+        "group": "17",
+        "family": "7A",
+        "period": "2",
+        "block": "p",
+        "type": "halogen",
+        "ptBR": {
+            "name": "Flúor"
+        },
+        "enUS": {
+            "name": "Fluorine"
+        },
+        "esES": {
+            "name": "Flúor"
+        }
+    },
+    {
+        "protons": 10,
+        "mass": 20.1797,
+        "symbol": "Ne",
+        "electron": "1s^2 2s^2 2p^6",
+        "group": 18,
+        "family": "18",
+        "period": "2",
+        "block": "p",
+        "type": "nobleGas",
+        "ptBR": {
+            "name": "Neônio"
+        },
+        "enUS": {
+            "name": "Neon"
+        },
+        "esES": {
+            "name": "Neón"
+        }
+    },
+    {
+        "protons": 11,
+        "mass": 22.98977,
+        "symbol": "Na",
+        "electron": "[He] 3s^1",
+        "group": "1",
+        "family": "1A",
+        "period": "3",
+        "block": "s",
+        "type": "alkali",
+        "ptBR": {
+            "name": "Sódio"
+        },
+        "enUS": {
+            "name": "Sodium"
+        },
+        "esES": {
+            "name": "Sodio"
+        }
+    },
+    {
+        "protons": 12,
+        "mass": 24.305,
+        "symbol": "Mg",
+        "electron": "[He] 3s^2",
+        "group": "2",
+        "family": "2A",
+        "period": "3",
+        "block": "s",
+        "type": "alkaliEarth",
+        "ptBR": {
+            "name": "Magnésio"
+        },
+        "enUS": {
+            "name": "Magnesium"
+        },
+        "esES": {
+            "name": "Magnesio"
+        }
+    },
+    {
+        "protons": 13,
+        "mass": 26.98154,
+        "symbol": "Al",
+        "electron": "[He] 3s^2 3p^1",
+        "group": "13",
+        "family": "3A",
+        "period": "3",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Alumínio"
+        },
+        "enUS": {
+            "name": "Aluminum"
+        },
+        "esES": {
+            "name": "Aluminio"
+        }
+    },
+    {
+        "protons": 14,
+        "mass": 28.0855,
+        "symbol": "Si",
+        "electron": "[He] 3s^2 3p^2",
+        "group": "14",
+        "family": "4A",
+        "period": "3",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Silício"
+        },
+        "enUS": {
+            "name": "Silicon"
+        },
+        "esES": {
+            "name": "Silicio"
+        }
+    },
+    {
+        "protons": 15,
+        "mass": 30.97376,
+        "symbol": "P",
+        "electron": "[He] 3s^2 3p^3",
+        "group": "15",
+        "family": "5A",
+        "period": "3",
+        "block": "p",
+        "type": "nonMetal",
+        "ptBR": {
+            "name": "Fósforo"
+        },
+        "enUS": {
+            "name": "Phosphorus"
+        },
+        "esES": {
+            "name": "Fósforo"
+        }
+    },
+    {
+        "protons": 16,
+        "mass": 32.066,
+        "symbol": "S",
+        "electron": "[He] 3s^2 3p^4",
+        "group": "16",
+        "family": "6A",
+        "period": "3",
+        "block": "p",
+        "type": "nonMetal",
+        "ptBR": {
+            "name": "Enxofre"
+        },
+        "enUS": {
+            "name": "Sulfur"
+        },
+        "esES": {
+            "name": "Azufre"
+        }
+    },
+    {
+        "protons": 17,
+        "mass": 35.453,
+        "symbol": "Cl",
+        "electron": "[He] 3s^2 3p^5",
+        "group": "17",
+        "family": "7A",
+        "period": "3",
+        "block": "p",
+        "type": "halogen",
+        "ptBR": {
+            "name": "Cloro"
+        },
+        "enUS": {
+            "name": "Chlorine"
+        },
+        "esES": {
+            "name": "Cloro"
+        }
+    },
+    {
+        "protons": 18,
+        "mass": 39.948,
+        "symbol": "Ar",
+        "electron": "[He] 3s^2 3p^6",
+        "group": 18,
+        "family": "18",
+        "period": "3",
+        "block": "p",
+        "type": "nobleGas",
+        "ptBR": {
+            "name": "Argônio"
+        },
+        "enUS": {
+            "name": "Argon"
+        },
+        "esES": {
+            "name": "Argón"
+        }
+    },
+    {
+        "protons": 19,
+        "mass": 39.0983,
+        "symbol": "K",
+        "electron": "[Ar] 4s^1",
+        "group": "1",
+        "family": "1A",
+        "period": "4",
+        "block": "s",
+        "type": "alkali",
+        "ptBR": {
+            "name": "Potássio"
+        },
+        "enUS": {
+            "name": "Potassium"
+        },
+        "esES": {
+            "name": "Potasio"
+        }
+    },
+    {
+        "protons": 20,
+        "mass": 40.078,
+        "symbol": "Ca",
+        "electron": "[Ar] 4s^2",
+        "group": "2",
+        "family": "2A",
+        "period": "4",
+        "block": "s",
+        "type": "alkaliEarth",
+        "ptBR": {
+            "name": "Cálcio"
+        },
+        "enUS": {
+            "name": "Calcium"
+        },
+        "esES": {
+            "name": "Calcio"
+        }
+    },
+    {
+        "protons": 21,
+        "mass": 44.95591,
+        "symbol": "Sc",
+        "electron": "[Ar] 3d^1 4s^2",
+        "group": "3",
+        "family": "3B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Escândio"
+        },
+        "enUS": {
+            "name": "Scandium"
+        },
+        "esES": {
+            "name": "Escandio"
+        }
+    },
+    {
+        "protons": 22,
+        "mass": 47.867,
+        "symbol": "Ti",
+        "electron": "[Ar] 3d^2 4s^2",
+        "group": "4",
+        "family": "4B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Titânio"
+        },
+        "enUS": {
+            "name": "Titanium"
+        },
+        "esES": {
+            "name": "Titanio"
+        }
+    },
+    {
+        "protons": 23,
+        "mass": 50.9415,
+        "symbol": "V",
+        "electron": "[Ar] 3d^3 4s^2",
+        "group": "5",
+        "family": "5B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Vanádio"
+        },
+        "enUS": {
+            "name": "Vanadium"
+        },
+        "esES": {
+            "name": "Vanadio"
+        }
+    },
+    {
+        "protons": 24,
+        "mass": 51.9961,
+        "symbol": "Cr",
+        "electron": "[Ar] 3d^5 4s^1",
+        "group": "6",
+        "family": "6B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Cromo"
+        },
+        "enUS": {
+            "name": "Chromium"
+        },
+        "esES": {
+            "name": "Cromo"
+        }
+    },
+    {
+        "protons": 25,
+        "mass": 54.93805,
+        "symbol": "Mn",
+        "electron": "[Ar] 3d^5 4s^2",
+        "group": "7",
+        "family": "7B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Manganês"
+        },
+        "enUS": {
+            "name": "Manganese"
+        },
+        "esES": {
+            "name": "Manganeso"
+        }
+    },
+    {
+        "protons": 26,
+        "mass": 55.845,
+        "symbol": "Fe",
+        "electron": "[Ar] 3d^6 4s^2",
+        "group": "8",
+        "family": "8B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Ferro"
+        },
+        "enUS": {
+            "name": "Iron"
+        },
+        "esES": {
+            "name": "Hierro"
+        }
+    },
+    {
+        "protons": 27,
+        "mass": 58.93319,
+        "symbol": "Co",
+        "electron": "[Ar] 3d^7 4s^2",
+        "group": "9",
+        "family": "9B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Cobalto"
+        },
+        "enUS": {
+            "name": "Cobalt"
+        },
+        "esES": {
+            "name": "Cobalto"
+        }
+    },
+    {
+        "protons": 28,
+        "mass": 58.6934,
+        "symbol": "Ni",
+        "electron": "[Ar] 3d^8 4s^2",
+        "group": "10",
+        "family": "10B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Níquel"
+        },
+        "enUS": {
+            "name": "Nickel"
+        },
+        "esES": {
+            "name": "Níquel"
+        }
+    },
+    {
+        "protons": 29,
+        "mass": 63.546,
+        "symbol": "Cu",
+        "electron": "[Ar] 3d^10 4s^1",
+        "group": "11",
+        "family": "1B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Cobre"
+        },
+        "enUS": {
+            "name": "Copper"
+        },
+        "esES": {
+            "name": "Cobre"
+        }
+    },
+    {
+        "protons": 30,
+        "mass": 65.39,
+        "symbol": "Zn",
+        "electron": "[Ar] 3d^10 4s^2",
+        "group": "12",
+        "family": "2B",
+        "period": "4",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Zinco"
+        },
+        "enUS": {
+            "name": "Zinc"
+        },
+        "esES": {
+            "name": "Zinc"
+        }
+    },
+    {
+        "protons": 31,
+        "mass": 69.723,
+        "symbol": "Ga",
+        "electron": "[Ar] 3d^10 4s^2 4p^1",
+        "group": "13",
+        "family": "3A",
+        "period": "4",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Gálio"
+        },
+        "enUS": {
+            "name": "Gallium"
+        },
+        "esES": {
+            "name": "Galio"
+        }
+    },
+    {
+        "protons": 32,
+        "mass": 72.64,
+        "symbol": "Ge",
+        "electron": "[Ar] 3d^10 4s^2 4p^2",
+        "group": "14",
+        "family": "4A",
+        "period": "4",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Germânio"
+        },
+        "enUS": {
+            "name": "Germanium"
+        },
+        "esES": {
+            "name": "Germanio"
+        }
+    },
+    {
+        "protons": 33,
+        "mass": 74.9216,
+        "symbol": "As",
+        "electron": "[Ar] 3d^10 4s^2 4p^3",
+        "group": "15",
+        "family": "5A",
+        "period": "4",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Arsênio"
+        },
+        "enUS": {
+            "name": "Arsenic"
+        },
+        "esES": {
+            "name": "Arsénico"
+        }
+    },
+    {
+        "protons": 34,
+        "mass": 78.96,
+        "symbol": "Se",
+        "electron": "[Ar] 3d^10 4s^2 4p^4",
+        "group": "16",
+        "family": "6A",
+        "period": "4",
+        "block": "p",
+        "type": "nonMetal",
+        "ptBR": {
+            "name": "Selênio"
+        },
+        "enUS": {
+            "name": "Selenium"
+        },
+        "esES": {
+            "name": "Selenio"
+        }
+    },
+    {
+        "protons": 35,
+        "mass": 79.904,
+        "symbol": "Br",
+        "electron": "[Ar] 3d^10 4s^2 4p^5",
+        "group": "17",
+        "family": "7A",
+        "period": "4",
+        "block": "p",
+        "type": "halogen",
+        "ptBR": {
+            "name": "Bromo"
+        },
+        "enUS": {
+            "name": "Bromine"
+        },
+        "esES": {
+            "name": "Bromo"
+        }
+    },
+    {
+        "protons": 36,
+        "mass": 83.80,
+        "symbol": "Kr",
+        "electron": "[Ar] 3d^10 4s^2 4p^6",
+        "group": 18,
+        "family": "18",
+        "period": "4",
+        "block": "p",
+        "type": "nobleGas",
+        "ptBR": {
+            "name": "Criptônio"
+        },
+        "enUS": {
+            "name": "Krypton"
+        },
+        "esES": {
+            "name": "Kriptón"
+        }
+    },
+    {
+        "protons": 37,
+        "mass": 85.4678,
+        "symbol": "Rb",
+        "electron": "[Kr] 5s^1",
+        "group": "1",
+        "family": "1A",
+        "period": "5",
+        "block": "s",
+        "type": "alkali",
+        "ptBR": {
+            "name": "Rubídio"
+        },
+        "enUS": {
+            "name": "Rubidium"
+        },
+        "esES": {
+            "name": "Rubidio"
+        }
+    },
+    {
+        "protons": 38,
+        "mass": 87.62,
+        "symbol": "Sr",
+        "electron": "[Kr] 5s^2",
+        "group": "2",
+        "family": "2A",
+        "period": "5",
+        "block": "s",
+        "type": "alkaliEarth",
+        "ptBR": {
+            "name": "Estroncio"
+        },
+        "enUS": {
+            "name": "Strontium"
+        },
+        "esES": {
+            "name": "Estroncio"
+        }
+    },
+    {
+        "protons": 39,
+        "mass": 88.90585,
+        "symbol": "Y",
+        "electron": "[Kr] 4d^1 5s^2",
+        "group": "3",
+        "family": "3B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Ítrio"
+        },
+        "enUS": {
+            "name": "Yttrium"
+        },
+        "esES": {
+            "name": "Itrio"
+        }
+    },
+    {
+        "protons": 40,
+        "mass": 91.224,
+        "symbol": "Zr",
+        "electron": "[Kr] 4d^2 5s^2",
+        "group": "4",
+        "family": "4B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Zircônio"
+        },
+        "enUS": {
+            "name": "Zirconium"
+        },
+        "esES": {
+            "name": "Circonio"
+        }
+    },
+    {
+        "protons": 41,
+        "mass": 92.90638,
+        "symbol": "Nb",
+        "electron": "[Kr] 4d^4 5s^1",
+        "group": "5",
+        "family": "5B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Nióbio"
+        },
+        "enUS": {
+            "name": "Niobium"
+        },
+        "esES": {
+            "name": "Niobio"
+        }
+    },
+    {
+        "protons": 42,
+        "mass": 95.96,
+        "symbol": "Mo",
+        "electron": "[Kr] 4d^5 5s^1",
+        "group": "6",
+        "family": "6B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Molibdênio"
+        },
+        "enUS": {
+            "name": "Molybdenum"
+        },
+        "esES": {
+            "name": "Molibdeno"
+        }
+    },
+    {
+        "protons": 43,
+        "mass": 98.9063,
+        "symbol": "Tc",
+        "electron": "[Kr] 4d^5 5s^2",
+        "group": "7",
+        "family": "7B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Tecnécio"
+        },
+        "enUS": {
+            "name": "Technetium"
+        },
+        "esES": {
+            "name": "Tecnecio"
+        }
+    },
+    {
+        "protons": 44,
+        "mass": 101.07,
+        "symbol": "Ru",
+        "electron": "[Kr] 4d^7 5s^1",
+        "group": "8",
+        "family": "8B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Rutênio"
+        },
+        "enUS": {
+            "name": "Ruthenium"
+        },
+        "esES": {
+            "name": "Rutenio"
+        }
+    },
+    {
+        "protons": 45,
+        "mass": 102.9055,
+        "symbol": "Rh",
+        "electron": "[Kr] 4d^8 5s^1",
+        "group": "9",
+        "family": "9B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Ródio"
+        },
+        "enUS": {
+            "name": "Rhodium"
+        },
+        "esES": {
+            "name": "Rodio"
+        }
+    },
+    {
+        "protons": 46,
+        "mass": 106.42,
+        "symbol": "Pd",
+        "electron": "[Kr] 4d^10 5s^0",
+        "group": "10",
+        "family": "10B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Paládio"
+        },
+        "enUS": {
+            "name": "Palladium"
+        },
+        "esES": {
+            "name": "Paladio"
+        }
+    },
+    {
+        "protons": 47,
+        "mass": 107.8682,
+        "symbol": "Ag",
+        "electron": "[Kr] 4d^10 5s^1",
+        "group": "11",
+        "family": "11B",
+        "period": "5",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Prata"
+        },
+        "enUS": {
+            "name": "Silver"
+        },
+        "esES": {
+            "name": "Plata"
+        }
+    },
+    {
+        "protons": 48,
+        "mass": 112.414,
+        "symbol": "Cd",
+        "electron": "[Kr] 4d^10 5s^2 5p^2",
+        "group": "12",
+        "family": "2A",
+        "period": "5",
+        "block": "p",
+        "type": "metal",
+        "ptBR": {
+            "name": "Cádmio"
+        },
+        "enUS": {
+            "name": "Cadmium"
+        },
+        "esES": {
+            "name": "Cádmio"
+        }
+    },
+    {
+        "protons": 49,
+        "mass": 114.818,
+        "symbol": "In",
+        "electron": "[Kr] 4d^10 5s^2 5p^1",
+        "group": "13",
+        "family": "3A",
+        "period": "5",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Índio"
+        },
+        "enUS": {
+            "name": "Indium"
+        },
+        "esES": {
+            "name": "Indio"
+        }
+    },
+    {
+        "protons": 50,
+        "mass": 118.711,
+        "symbol": "Sn",
+        "electron": "[Kr] 4d^10 5s^2 5p^2",
+        "group": "14",
+        "family": "4A",
+        "period": "5",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Estanho"
+        },
+        "enUS": {
+            "name": "Tin"
+        },
+        "esES": {
+            "name": "Estaño"
+        }
+    },
+    {
+        "protons": 51,
+        "mass": 121.76,
+        "symbol": "Sb",
+        "electron": "[Kr] 4d^10 5s^2 5p^3",
+        "group": "15",
+        "family": "5A",
+        "period": "5",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Antimônio"
+        },
+        "enUS": {
+            "name": "Antimony"
+        },
+        "esES": {
+            "name": "Antimonio"
+        }
+    },
+    {
+        "protons": 52,
+        "mass": 127.6,
+        "symbol": "Te",
+        "electron": "[Kr] 4d^10 5s^2 5p^4",
+        "group": "16",
+        "family": "6A",
+        "period": "5",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Telúrio"
+        },
+        "enUS": {
+            "name": "Tellurium"
+        },
+        "esES": {
+            "name": "Telurio"
+        }
+    },
+    {
+        "protons": 53,
+        "mass": 126.90447,
+        "symbol": "I",
+        "electron": "[Kr] 4d^10 5s^2 5p^5",
+        "group": "17",
+        "family": "7A",
+        "period": "5",
+        "block": "p",
+        "type": "halogen",
+        "ptBR": {
+            "name": "Iodo"
+        },
+        "enUS": {
+            "name": "Iodine"
+        },
+        "esES": {
+            "name": "Yodo"
+        }
+    },
+    {
+        "protons": 54,
+        "mass": 131.293,
+        "symbol": "Xe",
+        "electron": "[Kr] 4d^10 5s^2 5p^6",
+        "group": 18,
+        "family": "18",
+        "period": "5",
+        "block": "p",
+        "type": "nobleGas",
+        "ptBR": {
+            "name": "Xenônio"
+        },
+        "enUS": {
+            "name": "Xenon"
+        },
+        "esES": {
+            "name": "Xenón"
+        }
+    },
+    {
+        "protons": 55,
+        "mass": 132.90545,
+        "symbol": "Cs",
+        "electron": "[Xe] 6s^1",
+        "group": "1",
+        "family": "1A",
+        "period": "6",
+        "block": "s",
+        "type": "alkali",
+        "ptBR": {
+            "name": "Césio"
+        },
+        "enUS": {
+            "name": "Cesium"
+        },
+        "esES": {
+            "name": "Cesio"
+        }
+    },
+    {
+        "protons": 56,
+        "mass": 137.327,
+        "symbol": "Ba",
+        "electron": "[Xe] 6s^2",
+        "group": "2",
+        "family": "2A",
+        "period": "6",
+        "block": "s",
+        "type": "alkaliEarth",
+        "ptBR": {
+            "name": "Bário"
+        },
+        "enUS": {
+            "name": "Barium"
+        },
+        "esES": {
+            "name": "Bario"
+        }
+    },
+    {
+        "protons": 57,
+        "mass": 138.9055,
+        "symbol": "La",
+        "electron": "[Xe] 5d^1 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Lantânio"
+        },
+        "enUS": {
+            "name": "Lanthanum"
+        },
+        "esES": {
+            "name": "Lantano"
+        }
+    },
+    {
+        "protons": 58,
+        "mass": 140.116,
+        "symbol": "Ce",
+        "electron": "[Xe] 4f^1 5d^1 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Cério"
+        },
+        "enUS": {
+            "name": "Cerium"
+        },
+        "esES": {
+            "name": "Cerio"
+        }
+    },
+    {
+        "protons": 59,
+        "mass": 140.90765,
+        "symbol": "Pr",
+        "electron": "[Xe] 4f^3 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Praseodímio"
+        },
+        "enUS": {
+            "name": "Praseodymium"
+        },
+        "esES": {
+            "name": "Praseodimio"
+        }
+    },
+    {
+        "protons": 60,
+        "mass": 144.242,
+        "symbol": "Nd",
+        "electron": "[Xe] 4f^4 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Neodímio"
+        },
+        "enUS": {
+            "name": "Neodymium"
+        },
+        "esES": {
+            "name": "Neodiminio"
+        }
+    },
+    {
+        "protons": 61,
+        "mass": 145,
+        "symbol": "Pm",
+        "electron": "[Xe] 4f^5 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Promécio"
+        },
+        "enUS": {
+            "name": "Promethium"
+        },
+        "esES": {
+            "name": "Prometio"
+        }
+    },
+    {
+        "protons": 62,
+        "mass": 150.36,
+        "symbol": "Sm",
+        "electron": "[Xe] 4f^6 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Samário"
+        },
+        "enUS": {
+            "name": "Samarium"
+        },
+        "esES": {
+            "name": "Samario"
+        }
+    },
+    {
+        "protons": 63,
+        "mass": 151.964,
+        "symbol": "Eu",
+        "electron": "[Xe] 4f^7 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Európio"
+        },
+        "enUS": {
+            "name": "Europium"
+        },
+        "esES": {
+            "name": "Europio"
+        }
+    },
+    {
+        "protons": 64,
+        "mass": 157.25,
+        "symbol": "Gd",
+        "electron": "[Xe] 4f^7 5d^1 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Gadolínio"
+        },
+        "enUS": {
+            "name": "Gadolinium"
+        },
+        "esES": {
+            "name": "Gadolinio"
+        }
+    },
+    {
+        "protons": 65,
+        "mass": 158.92535,
+        "symbol": "Tb",
+        "electron": "[Xe] 4f^9 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Térbio"
+        },
+        "enUS": {
+            "name": "Terbium"
+        },
+        "esES": {
+            "name": "Terbio"
+        }
+    },
+    {
+        "protons": 66,
+        "mass": 162.500,
+        "symbol": "Dy",
+        "electron": "[Xe] 4f^10 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Disprósio"
+        },
+        "enUS": {
+            "name": "Dysprosium"
+        },
+        "esES": {
+            "name": "Disprosio"
+        }
+    },
+    {
+        "protons": 67,
+        "mass": 164.93032,
+        "symbol": "Ho",
+        "electron": "[Xe] 4f^11 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Hólmio"
+        },
+        "enUS": {
+            "name": "Holmium"
+        },
+        "esES": {
+            "name": "Holmio"
+        }
+    },
+    {
+        "protons": 68,
+        "mass": 167.2593,
+        "symbol": "Er",
+        "electron": "[Xe] 4f^12 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Érbio"
+        },
+        "enUS": {
+            "name": "Erbium"
+        },
+        "esES": {
+            "name": "Erbio"
+        }
+    },
+    {
+        "protons": 69,
+        "mass": 168.93421,
+        "symbol": "Tm",
+        "electron": "[Xe] 4f^13 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Túlio"
+        },
+        "enUS": {
+            "name": "Thulium"
+        },
+        "esES": {
+            "name": "Tulio"
+        }
+    },
+    {
+        "protons": 70,
+        "mass": 173.054,
+        "symbol": "Yb",
+        "electron": "[Xe] 4f^14 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Itérbio"
+        },
+        "enUS": {
+            "name": "Ytterbium"
+        },
+        "esES": {
+            "name": "Iterbio"
+        }
+    },
+    {
+        "protons": 71,
+        "mass": 174.967,
+        "symbol": "Lu",
+        "electron": "[Xe] 4f^14 5d^1 6s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "6",
+        "block": "f",
+        "type": "lanthanides",
+        "ptBR": {
+            "name": "Lutécio"
+        },
+        "enUS": {
+            "name": "Lutetium"
+        },
+        "esES": {
+            "name": "Lutecio"
+        }
+    },
+    {
+        "protons": 72,
+        "mass": 178.49,
+        "symbol": "Hf",
+        "electron": "[Xe] 4f^14 5d^2 6s^2",
+        "group": "4",
+        "family": "4B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Háfnio"
+        },
+        "enUS": {
+            "name": "Hafnium"
+        },
+        "esES": {
+            "name": "Hafnio"
+        }
+    },
+    {
+        "protons": 73,
+        "mass": 180.94788,
+        "symbol": "Ta",
+        "electron": "[Xe] 4f^14 5d^3 6s^2",
+        "group": "5",
+        "family": "5B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Tântalo"
+        },
+        "enUS": {
+            "name": "Tantalum"
+        },
+        "esES": {
+            "name": "Tantalio"
+        }
+    },
+    {
+        "protons": 74,
+        "mass": 183.84,
+        "symbol": "W",
+        "electron": "[Xe] 4f^14 5d^4 6s^2",
+        "group": "6",
+        "family": "6B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Tungstênio"
+        },
+        "enUS": {
+            "name": "Tungsten"
+        },
+        "esES": {
+            "name": "Wolframio"
+        }
+    },
+    {
+        "protons": 75,
+        "mass": 186.207,
+        "symbol": "Re",
+        "electron": "[Xe] 4f^14 5d^5 6s^2",
+        "group": "7",
+        "family": "7B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Rênio"
+        },
+        "enUS": {
+            "name": "Rhenium"
+        },
+        "esES": {
+            "name": "Renio"
+        }
+    },
+    {
+        "protons": 76,
+        "mass": 190.23,
+        "symbol": "Os",
+        "electron": "[Xe] 4f^14 5d^6 6s^2",
+        "group": 8,
+        "family": "8B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Ósmio"
+        },
+        "enUS": {
+            "name": "Osmium"
+        },
+        "esES": {
+            "name": "Osmio"
+        }
+    },
+    {
+        "protons": 77,
+        "mass": 192.217,
+        "symbol": "Ir",
+        "electron": "[Xe] 4f^14 5d^7 6s^2",
+        "group": 9,
+        "family": "9B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Irídio"
+        },
+        "enUS": {
+            "name": "Iridium"
+        },
+        "esES": {
+            "name": "Iridio"
+        }
+    },
+    {
+        "protons": 78,
+        "mass": 195.084,
+        "symbol": "Pt",
+        "electron": "[Xe] 4f^14 5d^9 6s^1",
+        "group": 10,
+        "family": "10B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Platina"
+        },
+        "enUS": {
+            "name": "Platinum"
+        },
+        "esES": {
+            "name": "Platino"
+        }
+    },
+    {
+        "protons": 79,
+        "mass": 196.96657,
+        "symbol": "Au",
+        "electron": "[Xe] 4f^14 5d^10 6s^1",
+        "group": 11,
+        "family": "1B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Ouro"
+        },
+        "enUS": {
+            "name": "Gold"
+        },
+        "esES": {
+            "name": "Oro"
+        }
+    },
+    {
+        "protons": 80,
+        "mass": 200.59,
+        "symbol": "Hg",
+        "electron": "[Xe] 4f^14 5d^10 6s^2",
+        "group": 12,
+        "family": "2B",
+        "period": "6",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Mercúrio"
+        },
+        "enUS": {
+            "name": "Mercury"
+        },
+        "esES": {
+            "name": "Mercurio"
+        }
+    },
+    {
+        "protons": 81,
+        "mass": 204.3833,
+        "symbol": "Tl",
+        "electron": "[Xe] 4f^14 5d^10 6s^2 6p^1",
+        "group": 13,
+        "family": "3A",
+        "period": "6",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Tálio"
+        },
+        "enUS": {
+            "name": "Thallium"
+        },
+        "esES": {
+            "name": "Talio"
+        }
+    },
+    {
+        "protons": 82,
+        "mass": 207.2,
+        "symbol": "Pb",
+        "electron": "[Xe] 4f^14 5d^10 6s^2 6p^2",
+        "group": 14,
+        "family": "4A",
+        "period": "6",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Chumbo"
+        },
+        "enUS": {
+            "name": "Lead"
+        },
+        "esES": {
+            "name": "Plomo"
+        }
+    },
+    {
+        "protons": 83,
+        "mass": 208.9804,
+        "symbol": "Bi",
+        "electron": "[Xe] 4f^14 5d^10 6s^2 6p^3",
+        "group": 15,
+        "family": "5A",
+        "period": "6",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Bismuto"
+        },
+        "enUS": {
+            "name": "Bismuth"
+        },
+        "esES": {
+            "name": "Bismuto"
+        }
+    },
+    {
+        "protons": 84,
+        "mass": 209,
+        "symbol": "Po",
+        "electron": "[Xe] 4f^14 5d^10 6s^2 6p^4",
+        "group": 16,
+        "family": "6A",
+        "period": "6",
+        "block": "p",
+        "type": "metalloid",
+        "ptBR": {
+            "name": "Polônio"
+        },
+        "enUS": {
+            "name": "Polonium"
+        },
+        "esES": {
+            "name": "Polonio"
+        }
+    },
+    {
+        "protons": 85,
+        "mass": 210,
+        "symbol": "At",
+        "electron": "[Xe] 4f^14 5d^10 6s^2 6p^5",
+        "group": 17,
+        "family": "7A",
+        "period": "6",
+        "block": "p",
+        "type": "halogen",
+        "ptBR": {
+            "name": "Astato"
+        },
+        "enUS": {
+            "name": "Astatine"
+        },
+        "esES": {
+            "name": "Astato"
+        }
+    },
+    {
+        "protons": 86,
+        "mass": 222,
+        "symbol": "Rn",
+        "electron": "[Xe] 4f^14 5d^10 6s^2 6p^6",
+        "group": 18,
+        "family": "18",
+        "period": "6",
+        "block": "p",
+        "type": "nobleGas",
+        "ptBR": {
+            "name": "Radônio"
+        },
+        "enUS": {
+            "name": "Radon"
+        },
+        "esES": {
+            "name": "Radón"
+        }
+    },
+    {
+        "protons": 87,
+        "mass": 223,
+        "symbol": "Fr",
+        "electron": "[Rn] 7s^1",
+        "group": "1",
+        "family": "1A",
+        "period": "7",
+        "block": "s",
+        "type": "alkali",
+        "ptBR": {
+            "name": "Frâncio"
+        },
+        "enUS": {
+            "name": "Francium"
+        },
+        "esES": {
+            "name": "Francio"
+        }
+    },
+    {
+        "protons": 88,
+        "mass": 226,
+        "symbol": "Ra",
+        "electron": "[Rn] 7s^2",
+        "group": "2",
+        "family": "2A",
+        "period": "7",
+        "block": "s",
+        "type": "alkaliEarth",
+        "ptBR": {
+            "name": "Rádio"
+        },
+        "enUS": {
+            "name": "Radium"
+        },
+        "esES": {
+            "name": "Radio"
+        }
+    },
+    {
+        "protons": 89,
+        "mass": 227,
+        "symbol": "Ac",
+        "electron": "[Rn] 6d^1 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Actínio"
+        },
+        "enUS": {
+            "name": "Actinium"
+        },
+        "esES": {
+            "name": "Actinio"
+        }
+    },
+    {
+        "protons": 90,
+        "mass": 232.0381,
+        "symbol": "Th",
+        "electron": "[Rn] 6d^2 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Tório"
+        },
+        "enUS": {
+            "name": "Thorium"
+        },
+        "esES": {
+            "name": "Torio"
+        }
+    },
+    {
+        "protons": 91,
+        "mass": 231.03588,
+        "symbol": "Pa",
+        "electron": "[Rn] 5f^2 6d^1 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Protactínio"
+        },
+        "enUS": {
+            "name": "Protactinium"
+        },
+        "esES": {
+            "name": "Protactinio"
+        }
+    },
+    {
+        "protons": 92,
+        "mass": 238.02891,
+        "symbol": "U",
+        "electron": "[Rn] 5f^3 6d^1 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Urânio"
+        },
+        "enUS": {
+            "name": "Uranium"
+        },
+        "esES": {
+            "name": "Uranio"
+        }
+    },
+    {
+        "protons": 93,
+        "mass": 237,
+        "symbol": "Np",
+        "electron": "[Rn] 5f^4 6d^1 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Neptúnio"
+        },
+        "enUS": {
+            "name": "Neptunium"
+        },
+        "esES": {
+            "name": "Neptunio"
+        }
+    },
+    {
+        "protons": 94,
+        "mass": 244,
+        "symbol": "Pu",
+        "electron": "[Rn] 5f^6 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Plutônio"
+        },
+        "enUS": {
+            "name": "Plutonium"
+        },
+        "esES": {
+            "name": "Plutonio"
+        }
+    },
+    {
+        "protons": 95,
+        "mass": 243,
+        "symbol": "Am",
+        "electron": "[Rn] 5f^7 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Amerício"
+        },
+        "enUS": {
+            "name": "Americium"
+        },
+        "esES": {
+            "name": "Americio"
+        }
+    },
+    {
+        "protons": 96,
+        "mass": 247,
+        "symbol": "Cm",
+        "electron": "[Rn] 5f^7 6d^1 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Cúrio"
+        },
+        "enUS": {
+            "name": "Curium"
+        },
+        "esES": {
+            "name": "Curio"
+        }
+    },
+    {
+        "protons": 97,
+        "mass": 247,
+        "symbol": "Bk",
+        "electron": "[Rn] 5f^8 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Berquélio"
+        },
+        "enUS": {
+            "name": "Berkelium"
+        },
+        "esES": {
+            "name": "Berkelio"
+        }
+    },
+    {
+        "protons": 98,
+        "mass": 251,
+        "symbol": "Cf",
+        "electron": "[Rn] 5f^10 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Califórnio"
+        },
+        "enUS": {
+            "name": "Californium"
+        },
+        "esES": {
+            "name": "Californio"
+        }
+    },
+    {
+        "protons": 99,
+        "mass": 252,
+        "symbol": "Es",
+        "electron": "[Rn] 5f^11 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Einstênio"
+        },
+        "enUS": {
+            "name": "Einsteinium"
+        },
+        "esES": {
+            "name": "Einstenio"
+        }
+    },
+    {
+        "protons": 100,
+        "mass": 257,
+        "symbol": "Fm",
+        "electron": "[Rn] 5f^12 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Férmio"
+        },
+        "enUS": {
+            "name": "Fermium"
+        },
+        "esES": {
+            "name": "Fermio"
+        }
+    },
+    {
+        "protons": 101,
+        "mass": 258,
+        "symbol": "Md",
+        "electron": "[Rn] 5f^13 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Mendelévio"
+        },
+        "enUS": {
+            "name": "Mendelevium"
+        },
+        "esES": {
+            "name": "Mendelevio"
+        }
+    },
+    {
+        "protons": 102,
+        "mass": 259,
+        "symbol": "No",
+        "electron": "[Rn] 5f^14 7s^2",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Nobélio"
+        },
+        "enUS": {
+            "name": "Nobelium"
+        },
+        "esES": {
+            "name": "Nobelio"
+        }
+    },
+    {
+        "protons": 103,
+        "mass": 262,
+        "symbol": "Lr",
+        "electron": "[Rn] 5f^14 7s^2 7p^1",
+        "group": "3",
+        "family": "N/A",
+        "period": "7",
+        "block": "f",
+        "type": "actinides",
+        "ptBR": {
+            "name": "Laurêncio"
+        },
+        "enUS": {
+            "name": "Lawrencium"
+        },
+        "esES": {
+            "name": "Lawrencio"
+        }
+    },
+    {
+        "protons": 104,
+        "mass": 261,
+        "symbol": "Rf",
+        "electron": "[Rn] 5f^14 6d^2 7s^2",
+        "group": "4",
+        "family": "4B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Rutherfórdio"
+        },
+        "enUS": {
+            "name": "Rutherfordium"
+        },
+        "esES": {
+            "name": "Rutherfordio"
+        }
+    },
+    {
+        "protons": 105,
+        "mass": 262,
+        "symbol": "Db",
+        "electron": "[Rn] 5f^14 6d^3 7s^2",
+        "group": "5",
+        "family": "5B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Dúbnio"
+        },
+        "enUS": {
+            "name": "Dubnium"
+        },
+        "esES": {
+            "name": "Dubnio"
+        }
+    },
+    {
+        "protons": 106,
+        "mass": 263,
+        "symbol": "Sg",
+        "electron": "[Rn] 5f^14 6d^4 7s^2",
+        "group": "6",
+        "family": "6B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Seabórgio"
+        },
+        "enUS": {
+            "name": "Seaborgium"
+        },
+        "esES": {
+            "name": "Seaborgio"
+        }
+    },
+    {
+        "protons": 107,
+        "mass": 262,
+        "symbol": "Bh",
+        "electron": "[Rn] 5f^14 6d^5 7s^2",
+        "group": "7",
+        "family": "7B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Bóhrio"
+        },
+        "enUS": {
+            "name": "Bohrium"
+        },
+        "esES": {
+            "name": "Bohrio"
+        }
+    },
+    {
+        "protons": 108,
+        "mass": 265,
+        "symbol": "Hs",
+        "electron": "[Rn] 5f^14 6d^6 7s^2",
+        "group": 8,
+        "family": "8B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Hássio"
+        },
+        "enUS": {
+            "name": "Hassium"
+        },
+        "esES": {
+            "name": "Hasio"
+        }
+    },
+    {
+        "protons": 109,
+        "mass": 266,
+        "symbol": "Mt",
+        "electron": "[Rn] 5f^14 6d^7 7s^2",
+        "group": 9,
+        "family": "9B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Meitnério"
+        },
+        "enUS": {
+            "name": "Meitnerium"
+        },
+        "esES": {
+            "name": "Meitnerio"
+        }
+    },
+    {
+        "protons": 110,
+        "mass": 269,
+        "symbol": "Ds",
+        "electron": "[Rn] 5f^14 6d^8 7s^2",
+        "group": 10,
+        "family": "10B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Darmstádio"
+        },
+        "enUS": {
+            "name": "Darmstadtium"
+        },
+        "esES": {
+            "name": "Darmstatio"
+        }
+    },
+    {
+        "protons": 111,
+        "mass": 272,
+        "symbol": "Rg",
+        "electron": "[Rn] 5f^14 6d^9 7s^2",
+        "group": 11,
+        "family": "1B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Roentgênio"
+        },
+        "enUS": {
+            "name": "Roentgenium"
+        },
+        "esES": {
+            "name": "Roentgenio"
+        }
+    },
+    {
+        "protons": 112,
+        "mass": 277,
+        "symbol": "Cn",
+        "electron": "[Rn] 5f^14 6d^10 7s^2",
+        "group": 12,
+        "family": "2B",
+        "period": "7",
+        "block": "d",
+        "type": "metal",
+        "ptBR": {
+            "name": "Copernício"
+        },
+        "enUS": {
+            "name": "Copernicium"
+        },
+        "esES": {
+            "name": "Copernicio"
+        }
+    },
+    {
+        "protons": 113,
+        "mass": 284,
+        "symbol": "Nh",
+        "electron": "[Rn] 5f^14 6d^10 7s^2 7p^1",
+        "group": 13,
+        "family": "3A",
+        "period": "7",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Nihônio"
+        },
+        "enUS": {
+            "name": "Nihonium"
+        },
+        "esES": {
+            "name": "Nihonio"
+        }
+    },
+    {
+        "protons": 114,
+        "mass": 289,
+        "symbol": "Fl",
+        "electron": "[Rn] 5f^14 6d^10 7s^2 7p^2",
+        "group": 14,
+        "family": "4A",
+        "period": "7",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Fleróvio"
+        },
+        "enUS": {
+            "name": "Flerovium"
+        },
+        "esES": {
+            "name": "Flerovio"
+        }
+    },
+    {
+        "protons": 115,
+        "mass": 288,
+        "symbol": "Mc",
+        "electron": "[Rn] 5f^14 6d^10 7s^2 7p^3",
+        "group": 15,
+        "family": "5A",
+        "period": "7",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Moscóvio"
+        },
+        "enUS": {
+            "name": "Moscovium"
+        },
+        "esES": {
+            "name": "Moscovio"
+        }
+    },
+    {
+        "protons": 116,
+        "mass": 293,
+        "symbol": "Lv",
+        "electron": "[Rn] 5f^14 6d^10 7s^2 7p^4",
+        "group": 16,
+        "family": "6A",
+        "period": "7",
+        "block": "p",
+        "type": "semiMetal",
+        "ptBR": {
+            "name": "Livermório"
+        },
+        "enUS": {
+            "name": "Livermorium"
+        },
+        "esES": {
+            "name": "Livermorio"
+        }
+    },
+    {
+        "protons": 117,
+        "mass": 294,
+        "symbol": "Ts",
+        "electron": "[Rn] 5f^14 6d^10 7s^2 7p^5",
+        "group": 17,
+        "family": "7A",
+        "period": "7",
+        "block": "p",
+        "type": "halogen",
+        "ptBR": {
+            "name": "Tenessino"
+        },
+        "enUS": {
+            "name": "Tennessine"
+        },
+        "esES": {
+            "name": "Tenesino"
+        }
+    },
+    {
+        "protons": 118,
+        "mass": 294,
+        "symbol": "Og",
+        "electron": "[Rn] 5f^14 6d^10 7s^2 7p^6",
+        "group": 18,
+        "family": "18",
+        "period": "7",
+        "block": "p",
+        "type": "nobleGas",
+        "ptBR": {
+            "name": "Oganessônio"
+        },
+        "enUS": {
+            "name": "Oganesson"
+        },
+        "esES": {
+            "name": "Oganesón"
+        }
+    }
+]

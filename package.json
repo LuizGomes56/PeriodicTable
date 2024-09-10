@@ -1,0 +1,14 @@
+{
+  "name": "periodictable",
+  "version": "1.0.0",
+  "description": "Periodic table game in React",
+  "scripts": {
+    "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\""
+  },
+  "keywords": [],
+  "author": "Luiz Santana",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
