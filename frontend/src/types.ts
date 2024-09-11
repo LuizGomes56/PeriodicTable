@@ -67,8 +67,8 @@ export const Layout: number[][] = [
 export type LocalStorageData = {
     game: GameProps;
     settings: GameSettings;
-    time: number;
-    options: number[];
+    darkmode: boolean;
+    tableSize: number;
     gamemode: (typeof Gamemodes)[number];
     difficulty: (typeof Difficulties)[number];
     language: (typeof Languages)[number];

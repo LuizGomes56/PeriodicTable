@@ -10,7 +10,7 @@ export default {
                 "rose-250": "rgb(251 192 200)",
                 "gold": "hsl(50, 100%, 87.5%)",
                 "wrong": "#f87171",
-                "correct": "#34d399"
+                "correct": "#00fa9a"
             }
         }
     },

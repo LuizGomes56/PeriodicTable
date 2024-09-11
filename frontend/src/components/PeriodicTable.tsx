@@ -1,11 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Difficulty, Families, GameProps, GroupColors, Languages, Layout } from "../types";
 
 type ChangePropertyProps = { width: string, height: string, symbolSize: string, truncateAt: string, truncateSize: string, protonSize: string };
 
+const VanishTimeOut = 1250;
+
 const EventStyles = {
     onCorrect: "bg-correct",
-    onWrong: "bg-wrong"
+    onWrong: "bg-wrong",
+    wrong: "#f87171",
+    correct: "#00fa9a"
 }
 
 let TableSize = {
@@ -104,7 +108,7 @@ const Cell = ({ protons, symbol, name, type, config, onClick }: { protons: numbe
     const bg = config.showGroupColors ? GroupColors[type as keyof typeof GroupColors] : '';
     const cellRef = useRef<HTMLTableCellElement>(null);
     return (
-        <td ref={cellRef} onClick={() => onClick(protons, cellRef)} className={`${Boolean(bg) ? bg : "dark:bg-white"} select-none cursor-pointer border p-0 border-black transition-all ${TableSize.height} ${TableSize.width} duration-200 ${bg}`}>
+        <td ref={cellRef} onClick={() => onClick(protons, cellRef)} className={`${Boolean(bg) ? bg : "bg-white"} select-none cursor-pointer border p-0 border-black transition-all ${TableSize.height} ${TableSize.width} duration-200 ${bg}`}>
             <div className="flex flex-col justify-center text-center relative h-full">
                 {config?.table.protons && <span className={`leading-none absolute ${TableSize.protonSize} top-0.5 right-0.5`}>{protons}</span>}
                 {config?.table.symbol && <span className={`leading-5 ${TableSize.symbolSize} font-medium`}>{symbol}</span>}
@@ -131,6 +135,8 @@ const SpecialCell = ({ exec }: { exec: number }) => {
 }
 
 export default function PeriodicTable({ game, config, lang, tableSize, draft, setOptions, setCount }: { game: GameProps, setOptions: React.Dispatch<React.SetStateAction<number[]>>, setCount: React.Dispatch<React.SetStateAction<number>>, config: Difficulty, draft: number, lang: string, tableSize: number }) {
+    let [wrongGuesses, setWrongGuesses] = useState<number>(0);
+
     let n = 0;
 
     useEffect(() => {
@@ -157,8 +163,12 @@ export default function PeriodicTable({ game, config, lang, tableSize, draft, se
 
         setCount(prev => prev + 1);
 
+        let WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
+
+        // Implementar fortificação de cores em sucessividade de erros --> console.log(wrongGuesses);
+        // Corrigir o erro de multiplas classes de BG do tailwind
+
         if ((local - 1) == draft) {
-            let WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
             WrongCells.forEach((cell) => cell.classList.remove(EventStyles.onWrong));
 
             setOptions(prev => {
@@ -167,14 +177,18 @@ export default function PeriodicTable({ game, config, lang, tableSize, draft, se
 
             if (config.answerPersist) {
                 cell.classList.add(EventStyles.onCorrect, 'cursor-default');
+                cell.style.backgroundColor = EventStyles.correct;
             }
             else {
                 cell.classList.add(EventStyles.onCorrect, 'cursor-default');
                 setTimeout(() => {
                     cell.classList.remove(EventStyles.onCorrect);
-                }, 1500);
+                    cell.style.backgroundColor = EventStyles.correct;
+                }, VanishTimeOut);
             }
-        } else {
+            setWrongGuesses(0);
+        }
+        else {
             if (config.errorProtection) {
                 cell.classList.add(EventStyles.onWrong, 'cursor-default');
             }
@@ -183,8 +197,9 @@ export default function PeriodicTable({ game, config, lang, tableSize, draft, se
                 setTimeout(() => {
                     cell.classList.remove(EventStyles.onWrong);
                     cell.style.backgroundColor = bgColor;
-                }, 1500);
+                }, VanishTimeOut);
             }
+            setWrongGuesses(prev => prev + 1);
         }
     }
 

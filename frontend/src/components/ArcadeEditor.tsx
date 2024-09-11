@@ -11,8 +11,8 @@ export default function ArcadeEditor({ mainkey, name, value, onChange }: { maink
     };
 
     return (
-        <div className="grid grid-cols-2 gap-1">
-            <label htmlFor={mainkey} className="bg-stone-100 dark:bg-white rounded text-center font-semibold w-28 h-10 content-center">
+        <div className="grid grid-cols-2 gap-1 md:max-w-[228px]">
+            <label htmlFor={mainkey} className="bg-stone-100 dark:bg-white rounded text-center font-semibold min-w-28 h-10 content-center">
                 {name}
             </label>
             <input
@@ -21,7 +21,7 @@ export default function ArcadeEditor({ mainkey, name, value, onChange }: { maink
                 inputMode="numeric"
                 value={value >= 1e6 ? "∞" : value.toString()}
                 onChange={onEvent}
-                className={`${value >= 1e6 && "text-xl"} w-28 h-10 px-4 text-center dark:bg-sky-400 font-semibold bg-blue-100 rounded`}
+                className={`${value >= 1e6 && "text-xl"} min-w-28 h-10 px-4 text-center dark:bg-sky-400 font-semibold bg-blue-100 rounded`}
             />
         </div>
     )
