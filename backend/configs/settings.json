@@ -15,12 +15,12 @@
                 "bonusTime": 0,
                 "totalTime": 400
             },
-            "errorProtection": true,
+            "errorProtection": false,
             "showGroupColors": true,
-            "answerPersist": false,
+            "answerPersist": true,
             "table": {
-                "name": true,
-                "symbol": true,
+                "name": false,
+                "symbol": false,
                 "protons": true
             },
             "hints": {

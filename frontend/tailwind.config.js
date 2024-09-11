@@ -5,7 +5,14 @@ export default {
         "./src/**/*.{html,js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {}
+        extend: {
+            backgroundColor: {
+                "rose-250": "rgb(251 192 200)",
+                "gold": "hsl(50, 100%, 87.5%)",
+                "wrong": "#f87171",
+                "correct": "#34d399"
+            }
+        }
     },
     darkMode: 'class',
     plugins: [],

@@ -27,9 +27,9 @@ export type Difficulty = {
 }
 
 export const GroupColors = {
-    alkali: "bg-red-400",
-    alkaliEarth: "bg-rose-300",
-    metal: "bg-orange-200",
+    alkali: "bg-rose-250",
+    alkaliEarth: "bg-orange-200",
+    metal: "bg-gold",
     nobleGas: "bg-purple-400",
     halogen: "bg-indigo-300",
     nonMetal: "bg-sky-300",

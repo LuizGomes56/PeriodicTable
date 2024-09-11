@@ -7,6 +7,7 @@ import Hintbox from "./components/Hintbox";
 import ArcadeEditor from "./components/ArcadeEditor";
 import Darkmode from "./components/Darkmode";
 import TableSizeInput from "./components/TableSizeInput";
+import useSkipRender from "./useSkipRender";
 
 const EndPoint = "http://localhost:3000";
 
@@ -33,7 +34,7 @@ const CreateSelector = ({ array, type, onChange, value }: { array: string[], typ
     return (
         <>
             {array.map((e, i) => (
-                <label htmlFor={e} key={i} className="h-10 min-w-28">
+                <label htmlFor={e} key={i} className={`${array.length % 2 !== 0 && i === array.length - 1 ? "col-span-2" : ""} h-10 min-w-28`}>
                     <div className="select-none has-[:checked]:bg-sky-300 cursor-pointer h-full px-4 bg-blue-100 dark:bg-white dark:has-[:checked]:bg-sky-400 rounded transition-all duration-300 justify-center flex items-center text-black">
                         <input
                             type="radio"
@@ -88,12 +89,13 @@ export default function Game() {
     let [darkmode, setDarkmode] = useState<boolean>(false);
     let [tableSize, setTableSize] = useState<number>(8);
 
-    let [difficulty, setDifficulty] = useState<Diff>("easy");
+    let [difficulty, setDifficulty] = useState<Diff>("custom");
     let [language, setLanguage] = useState<Lang>("enUS");
     let [gamemode, setGamemode] = useState<"classic" | "arcade">("arcade");
 
     let [time, setTime] = useState<number>(0);
     let [options, setOptions] = useState<number[]>([]);
+
     let [draft, setDraft] = useState<number>(0);
     let [count, setCount] = useState<number>(0);
 
@@ -139,21 +141,28 @@ export default function Game() {
         else return false;
     }
 
-    useEffect(() => {
+    const RestartGame = () => {
         let opt = Array.from({ length: 118 }, (_, i) => i);
         setOptions(opt);
+        setCount(0);
+        setTime(0);
+    }
+
+    useEffect(() => {
+        // RestartGame();
         if (settings?.difficulties[difficulty] && difficulty !== "custom") {
             setConfig(settings.difficulties[difficulty]);
-            setTime(0);
         }
         UpdateLocalStorage("difficulty", difficulty);
     }, [difficulty]);
 
-    useEffect(() => {
+    useSkipRender(() => {
         if (options.length > 0) {
             setDraft(Random(options));
         }
         else {
+            window.alert("Você venceu o jogo!");
+            RestartGame();
             console.log("Endgame, display information and congratz");
         }
     }, [options])
@@ -182,6 +191,8 @@ export default function Game() {
             // const decodeURL = decodeURIComponent(urlJSON);
             // console.log(decodeURL)
         }
+        let opt = Array.from({ length: 118 }, (_, i) => i);
+        setOptions(opt);
     }
 
     const ChangeSettings = (key: keyof Omit<Difficulty, 'arcade'>, val: boolean, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"]) => {
@@ -190,6 +201,7 @@ export default function Game() {
             if (!prev) return prev;
             return subkey && typeof prev[key] === 'object' ? { ...prev, [key]: { ...prev[key], [subkey]: val, } } : { ...prev, [key]: val, };
         });
+        // if (difficulty == "custom") { RestartGame(); }
     };
 
     const ChangeArcadeSettings = (key: keyof Difficulty["arcade"], val: number) => {

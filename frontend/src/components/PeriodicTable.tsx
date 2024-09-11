@@ -1,6 +1,12 @@
+import { useEffect, useRef } from "react";
 import { Difficulty, Families, GameProps, GroupColors, Languages, Layout } from "../types";
 
 type ChangePropertyProps = { width: string, height: string, symbolSize: string, truncateAt: string, truncateSize: string, protonSize: string };
+
+const EventStyles = {
+    onCorrect: "bg-correct",
+    onWrong: "bg-wrong"
+}
 
 let TableSize = {
     width: "w-16",
@@ -94,10 +100,11 @@ const Sizesheet: Record<string, ChangePropertyProps> = {
     },
 }
 
-const Cell = ({ protons, symbol, name, type, config, onClick }: { protons: number, symbol: string, name: string, type: string, config: Difficulty, onClick: (cell: number) => void }) => {
+const Cell = ({ protons, symbol, name, type, config, onClick }: { protons: number, symbol: string, name: string, type: string, config: Difficulty, onClick: (cell: number, ref: React.RefObject<HTMLTableCellElement>) => void }) => {
     const bg = config.showGroupColors ? GroupColors[type as keyof typeof GroupColors] : '';
+    const cellRef = useRef<HTMLTableCellElement>(null);
     return (
-        <td onClick={() => onClick(protons)} className={`${Boolean(bg) ? bg : "dark:bg-white"} cursor-pointer border p-0 border-black transition-all ${TableSize.height} ${TableSize.width} duration-200 ${bg}`}>
+        <td ref={cellRef} onClick={() => onClick(protons, cellRef)} className={`${Boolean(bg) ? bg : "dark:bg-white"} select-none cursor-pointer border p-0 border-black transition-all ${TableSize.height} ${TableSize.width} duration-200 ${bg}`}>
             <div className="flex flex-col justify-center text-center relative h-full">
                 {config?.table.protons && <span className={`leading-none absolute ${TableSize.protonSize} top-0.5 right-0.5`}>{protons}</span>}
                 {config?.table.symbol && <span className={`leading-5 ${TableSize.symbolSize} font-medium`}>{symbol}</span>}
@@ -126,26 +133,57 @@ const SpecialCell = ({ exec }: { exec: number }) => {
 export default function PeriodicTable({ game, config, lang, tableSize, draft, setOptions, setCount }: { game: GameProps, setOptions: React.Dispatch<React.SetStateAction<number[]>>, setCount: React.Dispatch<React.SetStateAction<number>>, config: Difficulty, draft: number, lang: string, tableSize: number }) {
     let n = 0;
 
+    useEffect(() => {
+        if (!config.errorProtection) {
+            let WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
+            WrongCells.forEach((cell) => cell.classList.remove(EventStyles.onWrong));
+        }
+        if (!config.answerPersist) {
+            let CorrectCells = document.querySelectorAll(`td.${EventStyles.onCorrect}`);
+            CorrectCells.forEach((cell) => cell.classList.remove(EventStyles.onCorrect));
+        }
+    }, [config.errorProtection, config.answerPersist]);
+
     TableSize = { ...TableSize, ...Sizesheet[tableSize] };
 
-    const PlayerClick = (local: number) => {
+    const PlayerClick = (local: number, cellRef: React.RefObject<HTMLTableCellElement>) => {
+        if (!cellRef.current) return;
+
+        let cell = cellRef.current;
+
+        if (cell.classList.contains(EventStyles.onWrong) || cell.classList.contains(EventStyles.onCorrect)) return;
+
+        let bgColor = cell.style.backgroundColor;
+
         setCount(prev => prev + 1);
-        if (local - 1 == draft) { // Um acerto
+
+        if ((local - 1) == draft) {
+            let WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
+            WrongCells.forEach((cell) => cell.classList.remove(EventStyles.onWrong));
+
             setOptions(prev => {
-                return prev.filter(num => num !== local);
+                return prev.filter(num => num !== (local - 1));
             });
+
             if (config.answerPersist) {
-                // Tornar a célula que foi clickada verde: bg-green-900, cursor-default
-                // Disable onClick events
-            }
-        }
-        else { // It is a miss
-            if (config.errorProtection) {
-                // Tornar a célula que foi clickada vermelha: bg-red-400, cursor-default
-                // Disable onClick events
+                cell.classList.add(EventStyles.onCorrect, 'cursor-default');
             }
             else {
-                // animate-pulse red-500 cursor-pointer (pulsar somente uma vez!)
+                cell.classList.add(EventStyles.onCorrect, 'cursor-default');
+                setTimeout(() => {
+                    cell.classList.remove(EventStyles.onCorrect);
+                }, 1500);
+            }
+        } else {
+            if (config.errorProtection) {
+                cell.classList.add(EventStyles.onWrong, 'cursor-default');
+            }
+            else {
+                cell.classList.add(EventStyles.onWrong);
+                setTimeout(() => {
+                    cell.classList.remove(EventStyles.onWrong);
+                    cell.style.backgroundColor = bgColor;
+                }, 1500);
             }
         }
     }
