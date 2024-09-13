@@ -119,7 +119,7 @@ const Cell = ({ protons, symbol, name, type, config, onClick }: { protons: numbe
     const bg = config.colors ? GroupColors[type as keyof typeof GroupColors] : '';
     const cellRef = useRef<HTMLTableCellElement>(null);
     return (
-        <td ref={cellRef} onClick={() => onClick(protons, cellRef)} className={`${Boolean(bg) ? bg : "bg-white"} select-none cursor-pointer border p-0 border-black transition-all ${TableSize.height} ${TableSize.width} duration-200 ${bg}`}>
+        <td ref={cellRef} onClick={() => onClick(protons, cellRef)} className={`${bg ? bg : "bg-white"} select-none cursor-pointer border p-0 border-black transition-all ${TableSize.height} ${TableSize.width} duration-200 ${bg}`}>
             <div className="aspect-square flex flex-col justify-center text-center relative h-full">
                 {config.protons && <span className={`leading-none absolute ${TableSize.protonSize} top-0.5 right-0.5`}>{protons}</span>}
                 {config.symbol && <span className={`leading-5 ${TableSize.symbolSize} font-medium`}>{symbol}</span>}
@@ -145,18 +145,18 @@ const SpecialCell = ({ exec }: { exec: number }) => {
     )
 }
 
-export default function PeriodicTable({ game, config, paused, lang, tableSize, draft, setOptions, setCount, setArcadeTime }: { game: GameProps, paused: boolean, setOptions: React.Dispatch<React.SetStateAction<number[]>>, setCount: React.Dispatch<React.SetStateAction<number>>, setArcadeTime: React.Dispatch<React.SetStateAction<number>>, config: Difficulty, draft: number, lang: string, tableSize: number }) {
-    let [wrongGuesses, setWrongGuesses] = useState<number>(0);
+export default function PeriodicTable({ game, config, paused, started, lang, tableSize, draft, setOptions, setCount, setArcadeTime }: { game: GameProps, paused: boolean, started: boolean, setOptions: React.Dispatch<React.SetStateAction<number[]>>, setCount: React.Dispatch<React.SetStateAction<number>>, setArcadeTime: React.Dispatch<React.SetStateAction<number>>, config: Difficulty, draft: number, lang: string, tableSize: number }) {
+    const [wrongGuesses, setWrongGuesses] = useState<number>(0);
 
     let n = 0;
 
     useEffect(() => {
         if (!config.errorProtection) {
-            let WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
+            const WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
             WrongCells.forEach((cell) => cell.classList.remove(EventStyles.onWrong));
         }
         if (!config.answerPersist) {
-            let CorrectCells = document.querySelectorAll(`td.${EventStyles.onCorrect}`);
+            const CorrectCells = document.querySelectorAll(`td.${EventStyles.onCorrect}`);
             CorrectCells.forEach((cell) => cell.classList.remove(EventStyles.onCorrect));
         }
     }, [config.errorProtection, config.answerPersist]);
@@ -166,15 +166,15 @@ export default function PeriodicTable({ game, config, paused, lang, tableSize, d
     const PlayerClick = (local: number, cellRef: React.RefObject<HTMLTableCellElement>) => {
         if (!cellRef.current || paused) { return };
 
-        let cell = cellRef.current;
+        const cell = cellRef.current;
 
         if (cell.classList.contains(EventStyles.onWrong) || cell.classList.contains(EventStyles.onCorrect)) return;
 
-        let bgColor = cell.style.backgroundColor;
+        const bgColor = cell.style.backgroundColor;
 
         setCount(prev => prev + 1);
 
-        let WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
+        const WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
 
         if ((local - 1) == draft) {
             WrongCells.forEach((cell) => cell.classList.remove(EventStyles.onWrong));
@@ -215,7 +215,7 @@ export default function PeriodicTable({ game, config, paused, lang, tableSize, d
     }
 
     return (
-        <table className={`border-collapse table-auto xl:w-full ${paused ? 'pointer-events-none' : ''}`}>
+        <table className={`border-collapse table-auto xl:w-full ${paused || !started ? 'pointer-events-none' : ''}`}>
             <thead>
                 <tr>
                     {Families.map((f, i) => <th className={`p-0 font-semibold dark:text-white ${TableSize.height} ${TableSize.protonSize}`} key={i}>{f}</th>)}
@@ -229,7 +229,7 @@ export default function PeriodicTable({ game, config, paused, lang, tableSize, d
                             return <SpecialCell key={j} exec={n} />;
                         }
                         if (n > 117) { n = 56; }
-                        let path = game[n];
+                        const path = game[n];
                         if (n == 70) { n = 87; }
                         if (cell && n < 118) {
                             n++;

@@ -1,0 +1,229 @@
+{
+    "languages": [
+        "ptBR",
+        "enUS",
+        "esES"
+    ],
+    "gamemodes": [
+        "classic",
+        "arcade"
+    ],
+    "difficulties": {
+        "custom": {
+            "arcade": {
+                "penaltyTime": 5,
+                "bonusTime": 10,
+                "totalTime": 400
+            },
+            "errorProtection": false,
+            "answerPersist": true,
+            "table": {
+                "name": false,
+                "symbol": false,
+                "protons": true,
+                "colors": true
+            },
+            "hints": {
+                "name": false,
+                "family": false,
+                "symbol": false,
+                "electron": false,
+                "mass": true,
+                "protons": false,
+                "group": false,
+                "period": false,
+                "block": false,
+                "type": true
+            }
+        },
+        "learn": {
+            "arcade": {
+                "penaltyTime": 0,
+                "bonusTime": 0,
+                "totalTime": 1E6
+            },
+            "errorProtection": true,
+            "answerPersist": true,
+            "table": {
+                "name": true,
+                "symbol": true,
+                "protons": true,
+                "colors": true
+            },
+            "hints": {
+                "name": true,
+                "family": true,
+                "symbol": true,
+                "electron": true,
+                "mass": true,
+                "protons": true,
+                "group": true,
+                "period": true,
+                "block": true,
+                "type": true
+            }
+        },
+        "easy": {
+            "arcade": {
+                "penaltyTime": 5,
+                "bonusTime": 30,
+                "totalTime": 600
+            },
+            "errorProtection": true,
+            "answerPersist": true,
+            "table": {
+                "name": false,
+                "symbol": true,
+                "protons": true,
+                "colors": true
+            },
+            "hints": {
+                "name": true,
+                "family": true,
+                "symbol": false,
+                "electron": true,
+                "mass": true,
+                "protons": false,
+                "group": true,
+                "period": true,
+                "block": true,
+                "type": true
+            }
+        },
+        "medium": {
+            "arcade": {
+                "penaltyTime": 10,
+                "bonusTime": 20,
+                "totalTime": 480
+            },
+            "errorProtection": true,
+            "answerPersist": true,
+            "table": {
+                "name": false,
+                "symbol": true,
+                "protons": true,
+                "colors": false
+            },
+            "hints": {
+                "name": true,
+                "family": false,
+                "symbol": false,
+                "electron": false,
+                "mass": true,
+                "protons": false,
+                "group": false,
+                "period": false,
+                "block": false,
+                "type": true
+            }
+        },
+        "hard": {
+            "arcade": {
+                "penaltyTime": 20,
+                "bonusTime": 5,
+                "totalTime": 240
+            },
+            "errorProtection": false,
+            "answerPersist": true,
+            "table": {
+                "name": false,
+                "symbol": false,
+                "protons": true,
+                "colors": false
+            },
+            "hints": {
+                "name": true,
+                "family": false,
+                "symbol": false,
+                "electron": false,
+                "mass": false,
+                "protons": false,
+                "group": false,
+                "period": false,
+                "block": true,
+                "type": false
+            }
+        },
+        "insane": {
+            "arcade": {
+                "penaltyTime": 10,
+                "bonusTime": 2,
+                "totalTime": 180
+            },
+            "errorProtection": false,
+            "answerPersist": false,
+            "table": {
+                "name": false,
+                "symbol": false,
+                "protons": true,
+                "colors": false
+            },
+            "hints": {
+                "name": true,
+                "family": false,
+                "symbol": false,
+                "electron": false,
+                "mass": false,
+                "protons": false,
+                "group": false,
+                "period": false,
+                "block": false,
+                "type": false
+            }
+        },
+        "extreme": {
+            "arcade": {
+                "penaltyTime": 30,
+                "bonusTime": 0,
+                "totalTime": 120
+            },
+            "errorProtection": false,
+            "answerPersist": false,
+            "table": {
+                "name": false,
+                "symbol": false,
+                "protons": false,
+                "colors": false
+            },
+            "hints": {
+                "name": false,
+                "family": false,
+                "symbol": false,
+                "electron": false,
+                "mass": true,
+                "protons": false,
+                "group": false,
+                "period": false,
+                "block": false,
+                "type": false
+            }
+        },
+        "impossible": {
+            "arcade": {
+                "penaltyTime": 0,
+                "bonusTime": 0,
+                "totalTime": 118
+            },
+            "errorProtection": false,
+            "answerPersist": false,
+            "table": {
+                "name": false,
+                "symbol": false,
+                "protons": false,
+                "colors": false
+            },
+            "hints": {
+                "name": false,
+                "family": false,
+                "symbol": false,
+                "electron": false,
+                "mass": false,
+                "protons": false,
+                "group": false,
+                "period": false,
+                "block": false,
+                "type": false
+            }
+        }
+    }
+}

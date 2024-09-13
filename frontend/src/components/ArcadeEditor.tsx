@@ -4,9 +4,9 @@ const MaxAlgarisms = 5;
 
 export default function ArcadeEditor({ mainkey, name, value, onChange, setCustom }: { mainkey: keyof Difficulty["arcade"], name: string, value: number, onChange: (key: keyof Difficulty["arcade"], val: number) => void, setCustom: () => void }) {
     const onEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let InputVal = e.target.value.replace(/\D/g, '');
+        const InputVal = e.target.value.replace(/\D/g, '');
         if (InputVal.length <= MaxAlgarisms) {
-            let toNum = Number(InputVal);
+            const toNum = Number(InputVal);
             setCustom();
             onChange(mainkey, toNum);
         }

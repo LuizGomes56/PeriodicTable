@@ -2,10 +2,10 @@ import { ButtonHeight, ButtonWidth } from "../types";
 
 export default function TableSizeInput({ value, onChange }: { value: number, onChange: (val: number) => void }) {
     const onEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let InputVal = e.target.value.replace(/\D/g, '');
+        const InputVal = e.target.value.replace(/\D/g, '');
         if (InputVal.length > 0) {
-            const lastDigit = InputVal.slice(-1);
-            onChange(Number(lastDigit));
+            const LastDigit = InputVal.slice(-1);
+            onChange(Number(LastDigit));
         }
     };
 

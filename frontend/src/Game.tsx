@@ -11,20 +11,46 @@ import useSkipRender from "./useSkipRender";
 
 const EndPoint = "http://localhost:3000";
 
+const FetchType: "Frontend" | "Backend" = "Frontend";
+
 const MinimumArcadeTime = 25;
 
-const GetUrl = (path: string) => `${EndPoint}/api/${path}`
+const GetUrl = (path: string): string => {
+    switch (FetchType) {
+        case "Frontend":
+            return `/json/${path}.json`;
+        default:
+            return `${EndPoint}/api/${path}`;
+    }
+}
 
 const FetchGame = async (): Promise<GameProps | null> => {
     try {
-        let response = await fetch(GetUrl("game"), {
+        const response = await fetch(GetUrl("game"), {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
             }
         });
-        let game = await response.json() as GameProps;
-        return game;
+        const resJson = await response.json() as GameProps;
+        return resJson;
+    }
+    catch (e) {
+        console.log(e);
+    }
+    return null;
+}
+
+const FetchSettings = async (): Promise<GameSettings | null> => {
+    try {
+        const response = await fetch(GetUrl("settings"), {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        const resJson = await response.json() as GameSettings;
+        return resJson;
     }
     catch (e) {
         console.log(e);
@@ -67,23 +93,6 @@ const CreateSettingsSelector = ({ array, type, onChange, value }: { array: strin
     )
 }
 
-const FetchSettings = async (): Promise<GameSettings | null> => {
-    try {
-        let response = await fetch(GetUrl("settings"), {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-        let settings = await response.json() as GameSettings;
-        return settings;
-    }
-    catch (e) {
-        console.log(e);
-    }
-    return null;
-}
-
 const SessionData = ({ text, value }: { text: string, value: string | number }) => {
     return (
         <div className="grid grid-cols-2 gap-x-2">
@@ -94,21 +103,21 @@ const SessionData = ({ text, value }: { text: string, value: string | number }) 
 }
 
 export default function Game() {
-    let [game, setGame] = useState<GameProps | null>(null);
-    let [settings, setSettings] = useState<GameSettings | null>(null);
-    let [darkmode, setDarkmode] = useState<boolean>(false);
-    let [tableSize, setTableSize] = useState<number>(8);
-    let [difficulty, setDifficulty] = useState<Diff>("custom");
-    let [language, setLanguage] = useState<Lang>("enUS");
-    let [gamemode, setGamemode] = useState<"classic" | "arcade">("arcade");
-    let [start, setStart] = useState<boolean>(false);
-    let [paused, setPaused] = useState<boolean>(false);
-    let [arcadeTime, setArcadeTime] = useState<number>(MinimumArcadeTime);
-    let [time, setTime] = useState<number>(0);
-    let [options, setOptions] = useState<number[]>([]);
-    let [draft, setDraft] = useState<number>(0);
-    let [count, setCount] = useState<number>(0);
-    let [config, setConfig] = useState<Difficulty | null>(null);
+    const [game, setGame] = useState<GameProps | null>(null);
+    const [settings, setSettings] = useState<GameSettings | null>(null);
+    const [darkmode, setDarkmode] = useState<boolean>(false);
+    const [tableSize, setTableSize] = useState<number>(8);
+    const [difficulty, setDifficulty] = useState<Diff>("custom");
+    const [language, setLanguage] = useState<Lang>("enUS");
+    const [gamemode, setGamemode] = useState<"classic" | "arcade">("arcade");
+    const [started, setStarted] = useState<boolean>(true);
+    const [paused, setPaused] = useState<boolean>(false);
+    const [arcadeTime, setArcadeTime] = useState<number>(MinimumArcadeTime);
+    const [time, setTime] = useState<number>(0);
+    const [options, setOptions] = useState<number[]>([]);
+    const [draft, setDraft] = useState<number>(0);
+    const [count, setCount] = useState<number>(0);
+    const [config, setConfig] = useState<Difficulty | null>(null);
 
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -134,15 +143,15 @@ export default function Game() {
 
     const RestartGame = () => {
         setPaused(false);
-        setStart(true);
-        let opt = Array.from({ length: 118 }, (_, i) => i);
+        setStarted(true);
+        const opt = Array.from({ length: 118 }, (_, i) => i);
         setOptions(opt);
         setCount(0);
         setArcadeTime(config?.arcade.totalTime || MinimumArcadeTime);
         setTime(0);
         clearIntervalIfExists();
         StartTimers();
-        let cells = document.querySelectorAll("table td");
+        const cells = document.querySelectorAll("table td");
         cells.forEach(cell => {
             cell.removeAttribute("style");
             cell.classList.remove("bg-wrong");
@@ -165,35 +174,40 @@ export default function Game() {
     };
 
     useEffect(() => {
-        if (start && !paused) {
+        if (started && !paused) {
             StartTimers();
         } else {
             clearIntervalIfExists();
         }
         return () => clearIntervalIfExists();
-    }, [start, paused, gamemode, config?.arcade.totalTime]);
+    }, [started, paused, gamemode, config?.arcade.totalTime]);
 
     useSkipRender(() => {
-        if (game && settings && config) {
-            let data = {
-                game: game,
-                settings: settings,
-                darkmode: darkmode,
-                tableSize: tableSize,
+        if (config) {
+            const main = {
                 difficulty: difficulty,
-                language: language,
                 gamemode: gamemode,
                 config: config
-            } as LocalStorageData;
-            window.localStorage.setItem("periodicTableGame", JSON.stringify(data));
+            }
+            const data = {
+                darkmode: darkmode,
+                language: language,
+            };
+
+            const newUri = encodeURIComponent(JSON.stringify(main));
+
+            window.localStorage.setItem("periodicTableGame", JSON.stringify(Object.assign(main, data)));
+
+            const newUrl = `${window.location.pathname}?data=${newUri}`;
+            window.history.replaceState(null, '', newUrl);
         }
-    }, [game, settings, darkmode, tableSize, difficulty, language, gamemode, config]);
+    }, [darkmode, difficulty, language, gamemode, config]);
 
     useEffect(() => {
         Load();
-        let x = window.localStorage.getItem("periodicTableGame");
+        const x = window.localStorage.getItem("periodicTableGame");
         if (x) {
-            let y = JSON.parse(x) as LocalStorageData;
+            const y = JSON.parse(x) as LocalStorageData;
             setDarkmode(y.darkmode);
         }
         else {
@@ -203,7 +217,7 @@ export default function Game() {
     }, []);
 
     useEffect(() => {
-        let a = document.body.classList;
+        const a = document.body.classList;
         if (darkmode) {
             a.remove("bg-white");
             a.add("bg-zinc-800", "dark");
@@ -214,45 +228,26 @@ export default function Game() {
         }
     }, [darkmode]);
 
-    const GetLocalStorage = (): boolean => {
-        let sess = window.localStorage.getItem("periodicTableGame");
+    const GetLocalStorage = (x: boolean): void => {
+        const sess = window.localStorage.getItem("periodicTableGame");
         if (sess) {
-            const jSess = JSON.parse(sess) as LocalStorageData;
-            setGame(jSess.game);
-            setSettings(jSess.settings);
-            setDifficulty(jSess.difficulty);
+            const jSess = JSON.parse(sess) as Omit<LocalStorageData, "game" | "settings">;
+            if (!x) {
+                setDifficulty(jSess.difficulty);
+                setGamemode(jSess.gamemode);
+                setConfig(jSess.config);
+            }
             setDarkmode(jSess.darkmode);
-            setTableSize(jSess.tableSize);
             setLanguage(jSess.language);
-            setGamemode(jSess.gamemode);
-            setConfig(jSess.config);
-            return true;
         }
-        else return false;
     }
 
-    // const RestartGame = () => {
-    //     console.log("Restarting the game")
-    //     let opt = Array.from({ length: 118 }, (_, i) => i);
-    //     setOptions(opt);
-    //     setCount(0);
-    //     setArcadeTime(config?.arcade.totalTime || MinimumArcadeTime);
-    //     setTime(0);
-    //     ResetTimers();
-    //     StartTimers();
-    //     let cells = document.querySelectorAll("table td");
-    //     cells.forEach(cell => {
-    //         cell.removeAttribute("style");
-    //         cell.classList.remove("bg-wrong");
-    //     });
-    // }
-
     useSkipRender(() => {
-        let a = config?.arcade.totalTime;
+        const a = config?.arcade.totalTime;
         if (a) {
             setArcadeTime(a < MinimumArcadeTime ? MinimumArcadeTime : a);
         }
-        if (start) { RestartGame(); }
+        if (started) { RestartGame(); }
     }, [config]);
 
     useSkipRender(() => RestartGame(), [gamemode]);
@@ -268,7 +263,6 @@ export default function Game() {
     }, [difficulty]);
 
     useSkipRender(() => {
-        // if (!start) { return; }
         if (options.length > 0) {
             setDraft(Random(options));
         }
@@ -281,21 +275,48 @@ export default function Game() {
     const Random = (opt: number[]) => opt[Math.floor(Math.random() * opt.length)];
 
     const Load = async () => {
-        let a = GetLocalStorage();
-        if (!a) {
-            let game = await FetchGame();
-            let settings = await FetchSettings();
-            setGame(game);
-            if (settings) {
-                let path = settings.difficulties[difficulty];
-                setSettings(settings);
-                setConfig(path);
-                setArcadeTime(path.arcade.totalTime);
+        const g = await FetchGame();
+        const s = await FetchSettings();
+        setGame(g);
+        setSettings(s);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlData = urlParams.get('data');
+
+        const opt = Array.from({ length: 118 }, (_, i) => i);
+        setOptions(opt);
+
+        let operation = false;
+
+        if (urlData) {
+            try {
+                const decodedData = JSON.parse(decodeURIComponent(urlData)) as Omit<LocalStorageData, "game" | "settings" | "darkmode" | "tableSize" | "language">;
+                setDifficulty(decodedData.difficulty);
+                setGamemode(decodedData.gamemode);
+                setConfig(decodedData.config);
+                operation = true;
+            }
+            catch (e) {
+                console.error("Erro ao decodificar os dados da URL", e);
             }
         }
-        let opt = Array.from({ length: 118 }, (_, i) => i);
-        setOptions(opt);
-    }
+        GetLocalStorage(operation);
+
+        if (!config && s) {
+            const path = s.difficulties[difficulty];
+            setConfig(path);
+            setArcadeTime(path.arcade.totalTime);
+        }
+    };
+
+    useSkipRender(() => {
+        if (started && arcadeTime < 0) {
+            RestartGame();
+            setStarted(false);
+            window.alert("Time out!");
+        }
+    }, [arcadeTime]);
+
 
     const ChangeSettings = (key: keyof Omit<Difficulty, 'arcade'>, val: boolean, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"]) => {
         if (!config) return;
@@ -333,8 +354,8 @@ export default function Game() {
                             </span>
                         </section>
                         <span className="flex flex-col">
-                            <CreateSettingsSelector type="gamemode" value={gamemode} onChange={setGamemode} array={Object.values(Gamemodes)} />
                             <CreateSettingsSelector type="language" value={language} onChange={setLanguage} array={Object.values(Languages)} />
+                            <CreateSettingsSelector type="gamemode" value={gamemode} onChange={setGamemode} array={Object.values(Gamemodes)} />
                         </span>
                         <CreateSettingsSelector type="difficulty" value={difficulty} onChange={setDifficulty} array={Object.values(Difficulties)} />
                         {config && gamemode == "arcade" && <section className={`${SectionMaxWidth}`}>
@@ -355,27 +376,27 @@ export default function Game() {
                 <section className="mt-4 flex gap-x-8 gap-y-4 justify-center flex-wrap mb-4 md:mb-0">
                     <div className="flex gap-4">
                     </div>
-                    {start ? <>
-                        <div className="flex gap-4 items-center">
+                    {started ? <>
+                        <div className="flex gap-4 my-1">
                             <button
                                 onClick={PauseOrResume}
                                 type="button"
-                                className={`bg-red-500 ${ButtonWidth} ${ButtonHeight} dark:bg-red-300 dark:text-black text-white font-bold py-2 px-4 rounded`}>
+                                className={`font-semibold ${paused ? "dark:bg-emerald-300 bg-emerald-500" : "bg-red-500 dark:bg-red-300"} ${ButtonWidth} ${ButtonHeight} py-2 px-4 rounded`}>
                                 {paused ? "Resume" : "Pause"}
                             </button>
                             <button
                                 onClick={RestartEvent}
                                 type="button"
-                                className={`bg-amber-500 text-white dark:bg-yellow-300 ${ButtonWidth} ${ButtonHeight} font-bold py-2 px-4 rounded`}>
+                                className={`bg-amber-500 dark:bg-yellow-300 ${ButtonWidth} ${ButtonHeight} font-semibold py-2 px-4 rounded`}>
                                 Restart
                             </button>
                         </div>
                         <div className="flex flex-col items-center w-full md:w-auto">
-                            <section className="min-w-64 rounded grid grid-cols-1 sm:grid-cols-[auto,auto] gap-1 gap-x-8">
+                            <section className="min-w-64 rounded grid grid-cols-1 sm:grid-cols-[auto,auto] gap-1 gap-x-2">
                                 <SessionData text="Attempts" value={count} />
                                 <SessionData text="Score" value={`${118 - options.length} / 118`} />
                                 <SessionData text="Time" value={gamemode == "arcade" ? arcadeTime > 1E5 ? "∞" : arcadeTime : time} />
-                                <SessionData text="Errors" value={count - 118 + options.length} />
+                                <SessionData text="Errors" value={count - (118 - options.length)} />
                             </section>
                         </div>
                         <div className="flex flex-col items-center w-full md:w-auto">
@@ -384,15 +405,15 @@ export default function Game() {
                     </> :
                         <button
                             type="button"
-                            onClick={() => setStart(true)}
-                            className={`bg-violet-500 ${ButtonWidth} ${ButtonHeight} dark:bg-sky-300 text-white font-bold py-2 px-4 rounded`}>
+                            onClick={() => setStarted(true)}
+                            className={`bg-violet-500 ${ButtonWidth} ${ButtonHeight} dark:bg-sky-300 font-semibold py-2 px-4 rounded`}>
                             Start
                         </button>
                     }
                 </section>
                 <div className="flex min-w-max w-full max-w-7xl">
                     {game && config ?
-                        <PeriodicTable setCount={setCount} paused={paused} setOptions={setOptions} setArcadeTime={setArcadeTime} draft={draft} tableSize={tableSize} game={game} config={config} lang={language} /> : <VoidPeriodicTable />}
+                        <PeriodicTable setCount={setCount} started={started} paused={paused} setOptions={setOptions} setArcadeTime={setArcadeTime} draft={draft} tableSize={tableSize} game={game} config={config} lang={language} /> : <VoidPeriodicTable />}
                 </div>
             </div>
         </div>
