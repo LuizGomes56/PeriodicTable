@@ -11,17 +11,17 @@
     "difficulties": {
         "custom": {
             "arcade": {
-                "penaltyTime": 0,
-                "bonusTime": 0,
+                "penaltyTime": 5,
+                "bonusTime": 10,
                 "totalTime": 400
             },
             "errorProtection": false,
-            "showGroupColors": true,
             "answerPersist": true,
             "table": {
                 "name": false,
                 "symbol": false,
-                "protons": true
+                "protons": true,
+                "colors": true
             },
             "hints": {
                 "name": false,
@@ -43,12 +43,12 @@
                 "totalTime": 1E6
             },
             "errorProtection": true,
-            "showGroupColors": true,
             "answerPersist": true,
             "table": {
                 "name": true,
                 "symbol": true,
-                "protons": true
+                "protons": true,
+                "colors": true
             },
             "hints": {
                 "name": true,
@@ -71,11 +71,11 @@
             },
             "errorProtection": true,
             "answerPersist": true,
-            "showGroupColors": true,
             "table": {
                 "name": false,
                 "symbol": true,
-                "protons": true
+                "protons": true,
+                "colors": true
             },
             "hints": {
                 "name": true,
@@ -98,11 +98,11 @@
             },
             "errorProtection": true,
             "answerPersist": true,
-            "showGroupColors": false,
             "table": {
                 "name": false,
                 "symbol": true,
-                "protons": true
+                "protons": true,
+                "colors": false
             },
             "hints": {
                 "name": true,
@@ -125,22 +125,22 @@
             },
             "errorProtection": false,
             "answerPersist": true,
-            "showGroupColors": false,
             "table": {
                 "name": false,
                 "symbol": false,
-                "protons": true
+                "protons": true,
+                "colors": false
             },
             "hints": {
                 "name": true,
-                "family": true,
+                "family": false,
                 "symbol": false,
                 "electron": false,
                 "mass": false,
                 "protons": false,
                 "group": false,
                 "period": false,
-                "block": false,
+                "block": true,
                 "type": false
             }
         },
@@ -152,11 +152,11 @@
             },
             "errorProtection": false,
             "answerPersist": false,
-            "showGroupColors": false,
             "table": {
                 "name": false,
                 "symbol": false,
-                "protons": true
+                "protons": true,
+                "colors": false
             },
             "hints": {
                 "name": true,
@@ -179,11 +179,11 @@
             },
             "errorProtection": false,
             "answerPersist": false,
-            "showGroupColors": false,
             "table": {
                 "name": false,
                 "symbol": false,
-                "protons": false
+                "protons": false,
+                "colors": false
             },
             "hints": {
                 "name": false,
@@ -200,17 +200,17 @@
         },
         "impossible": {
             "arcade": {
-                "penaltyTime": 110,
-                "bonusTime": 1,
+                "penaltyTime": 0,
+                "bonusTime": 0,
                 "totalTime": 118
             },
             "errorProtection": false,
             "answerPersist": false,
-            "showGroupColors": false,
             "table": {
                 "name": false,
                 "symbol": false,
-                "protons": false
+                "protons": false,
+                "colors": false
             },
             "hints": {
                 "name": false,

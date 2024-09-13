@@ -6,11 +6,11 @@ export type Difficulty = {
     };
     errorProtection: boolean;
     answerPersist: boolean;
-    showGroupColors: boolean;
     table: {
         name: boolean;
         symbol: boolean;
         protons: boolean;
+        colors: boolean;
     };
     hints: {
         name: boolean;
@@ -63,6 +63,10 @@ export const Layout: number[][] = [
     [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
 ] as const;
+
+export const ButtonWidth = "min-w-24";
+export const ButtonHeight = "h-10";
+export const SectionMaxWidth = "md:max-w-56";
 
 export type LocalStorageData = {
     game: GameProps;

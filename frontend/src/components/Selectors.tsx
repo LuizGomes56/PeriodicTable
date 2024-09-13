@@ -1,4 +1,4 @@
-import { Difficulty } from "../types";
+import { ButtonHeight, ButtonWidth, Difficulty, SectionMaxWidth } from "../types";
 
 const InputCheckbox = ({ path, name, onEvent, mainkey, subkey, setCustom, increments }: { path: boolean, name: string, onEvent: (key: keyof Omit<Difficulty, 'arcade'>, val: boolean, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"]) => void, mainkey: keyof Omit<Difficulty, 'arcade'>, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"], setCustom: () => void, increments?: string }) => {
     const onChange = () => {
@@ -7,7 +7,7 @@ const InputCheckbox = ({ path, name, onEvent, mainkey, subkey, setCustom, increm
     }
     return (
         <label className={increments ? increments : ""} htmlFor={name + mainkey}>
-            <div className="select-none has-[:checked]:bg-emerald-300 dark:has-[:checked]:bg-emerald-300 min-w-28 cursor-pointer text-nowrap h-10 text-center px-4 dark:bg-rose-300 bg-rose-100 rounded transition-all duration-300 justify-center flex items-center text-black">
+            <div className={`select-none has-[:checked]:bg-emerald-300 dark:has-[:checked]:bg-emerald-300 ${ButtonWidth} cursor-pointer text-nowrap ${ButtonHeight} text-center px-4 dark:bg-rose-300 bg-rose-100 rounded transition-all duration-300 justify-center flex items-center text-black`}>
                 <input
                     type="checkbox"
                     id={name + mainkey}
@@ -37,17 +37,17 @@ export default function Selectors({ config, onEvent, setCustom }: { config: Diff
     const TableSettings = [
         { subkey: "protons", name: "Protons" },
         { subkey: "symbol", name: "Symbol" },
-        { subkey: "name", name: "Name" }
+        { subkey: "colors", name: "Colors" },
+        { subkey: "name", name: "Name" },
     ] as HintProps<"table">;
     return (
         <>
             {config && (
-                <div className="flex flex-col md:flex-row md:gap-4">
-                    <section className="flex flex-col">
+                <div className="flex flex-col w-full md:w-fit">
+                    <section className={`flex flex-col ${SectionMaxWidth}`}>
                         <div className="flex flex-col">
                             <h2 className="text-lg font-semibold h-11 content-center dark:text-white">General Settings</h2>
                             <div className="flex flex-col gap-1">
-                                <InputCheckbox setCustom={setCustom} onEvent={onEvent} mainkey="showGroupColors" path={config.showGroupColors} name="Show Group Colors" />
                                 <InputCheckbox setCustom={setCustom} onEvent={onEvent} mainkey="answerPersist" path={config.answerPersist} name="Answer Persist" />
                                 <InputCheckbox setCustom={setCustom} onEvent={onEvent} mainkey="errorProtection" path={config.errorProtection} name="Error Protection" />
                             </div>
@@ -55,7 +55,7 @@ export default function Selectors({ config, onEvent, setCustom }: { config: Diff
                         <div className="flex flex-col">
                             <h2 className="text-lg font-semibold h-11 my-0.5 content-center dark:text-white">Table Settings</h2>
                             <div className="grid grid-cols-2 gap-1">
-                                {TableSettings.map(({ subkey, name }, i) => (
+                                {TableSettings.map(({ subkey, name }) => (
                                     <InputCheckbox
                                         key={subkey}
                                         setCustom={setCustom}
@@ -64,13 +64,12 @@ export default function Selectors({ config, onEvent, setCustom }: { config: Diff
                                         subkey={subkey as keyof Difficulty["table"]}
                                         path={config.table[subkey]}
                                         name={name}
-                                        increments={TableSettings.length % 2 !== 0 && i === TableSettings.length - 1 ? "col-span-2" : ""}
                                     />
                                 ))}
                             </div>
                         </div>
                     </section>
-                    <section className="flex flex-col">
+                    <section className={`flex flex-col ${SectionMaxWidth}`}>
                         <div className="flex flex-col">
                             <h2 className="text-lg font-semibold h-11 content-center dark:text-white">Hint Settings</h2>
                             <div className="grid grid-cols-2 gap-1">

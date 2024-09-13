@@ -9,7 +9,18 @@ const EventStyles = {
     onCorrect: "bg-correct",
     onWrong: "bg-wrong",
     wrong: "#f87171",
-    correct: "#00fa9a"
+    correct: [
+        // "#00FA9A",
+        // "#00E58C",
+        // "#00D07E",
+        // "#00BC71",
+        // "#00A764",
+        // "#009357",
+        // "#007F4A",
+        // "#006B3D",
+        // "#005730",
+        "#00FA9A", "#a3e635", "#fbbf24", "#f97316"
+    ]
 }
 
 let TableSize = {
@@ -104,15 +115,15 @@ const Sizesheet: Record<string, ChangePropertyProps> = {
     },
 }
 
-const Cell = ({ protons, symbol, name, type, config, onClick }: { protons: number, symbol: string, name: string, type: string, config: Difficulty, onClick: (cell: number, ref: React.RefObject<HTMLTableCellElement>) => void }) => {
-    const bg = config.showGroupColors ? GroupColors[type as keyof typeof GroupColors] : '';
+const Cell = ({ protons, symbol, name, type, config, onClick }: { protons: number, symbol: string, name: string, type: string, config: Difficulty["table"], onClick: (cell: number, ref: React.RefObject<HTMLTableCellElement>) => void }) => {
+    const bg = config.colors ? GroupColors[type as keyof typeof GroupColors] : '';
     const cellRef = useRef<HTMLTableCellElement>(null);
     return (
         <td ref={cellRef} onClick={() => onClick(protons, cellRef)} className={`${Boolean(bg) ? bg : "bg-white"} select-none cursor-pointer border p-0 border-black transition-all ${TableSize.height} ${TableSize.width} duration-200 ${bg}`}>
-            <div className="flex flex-col justify-center text-center relative h-full">
-                {config?.table.protons && <span className={`leading-none absolute ${TableSize.protonSize} top-0.5 right-0.5`}>{protons}</span>}
-                {config?.table.symbol && <span className={`leading-5 ${TableSize.symbolSize} font-medium`}>{symbol}</span>}
-                {config?.table.name && <span className={`${TableSize.truncateSize} leading-none truncate ${TableSize.truncateAt} place-self-center`}>{name}</span>}
+            <div className="aspect-square flex flex-col justify-center text-center relative h-full">
+                {config.protons && <span className={`leading-none absolute ${TableSize.protonSize} top-0.5 right-0.5`}>{protons}</span>}
+                {config.symbol && <span className={`leading-5 ${TableSize.symbolSize} font-medium`}>{symbol}</span>}
+                {config.name && <span className={`${TableSize.truncateSize} leading-none truncate ${TableSize.truncateAt} place-self-center`}>{name}</span>}
             </div>
         </td>
     )
@@ -129,12 +140,12 @@ const VoidCell = () => {
 const SpecialCell = ({ exec }: { exec: number }) => {
     return (
         <td className="p-0 dark:text-white">
-            <div className={`${TableSize.width} ${TableSize.protonSize} text-center font-semibold`}>{exec < 88 ? "57-71" : "89-103"}</div>
+            <div className={`${TableSize.protonSize} text-center font-semibold`}>{exec < 88 ? "57-71" : "89-103"}</div>
         </td>
     )
 }
 
-export default function PeriodicTable({ game, config, lang, tableSize, draft, setOptions, setCount }: { game: GameProps, setOptions: React.Dispatch<React.SetStateAction<number[]>>, setCount: React.Dispatch<React.SetStateAction<number>>, config: Difficulty, draft: number, lang: string, tableSize: number }) {
+export default function PeriodicTable({ game, config, paused, lang, tableSize, draft, setOptions, setCount, setArcadeTime }: { game: GameProps, paused: boolean, setOptions: React.Dispatch<React.SetStateAction<number[]>>, setCount: React.Dispatch<React.SetStateAction<number>>, setArcadeTime: React.Dispatch<React.SetStateAction<number>>, config: Difficulty, draft: number, lang: string, tableSize: number }) {
     let [wrongGuesses, setWrongGuesses] = useState<number>(0);
 
     let n = 0;
@@ -153,7 +164,7 @@ export default function PeriodicTable({ game, config, lang, tableSize, draft, se
     TableSize = { ...TableSize, ...Sizesheet[tableSize] };
 
     const PlayerClick = (local: number, cellRef: React.RefObject<HTMLTableCellElement>) => {
-        if (!cellRef.current) return;
+        if (!cellRef.current || paused) { return };
 
         let cell = cellRef.current;
 
@@ -165,11 +176,10 @@ export default function PeriodicTable({ game, config, lang, tableSize, draft, se
 
         let WrongCells = document.querySelectorAll(`td.${EventStyles.onWrong}`);
 
-        // Implementar fortificação de cores em sucessividade de erros --> console.log(wrongGuesses);
-        // Corrigir o erro de multiplas classes de BG do tailwind
-
         if ((local - 1) == draft) {
             WrongCells.forEach((cell) => cell.classList.remove(EventStyles.onWrong));
+
+            setArcadeTime(prev => prev + config.arcade.bonusTime);
 
             setOptions(prev => {
                 return prev.filter(num => num !== (local - 1));
@@ -177,18 +187,19 @@ export default function PeriodicTable({ game, config, lang, tableSize, draft, se
 
             if (config.answerPersist) {
                 cell.classList.add(EventStyles.onCorrect, 'cursor-default');
-                cell.style.backgroundColor = EventStyles.correct;
+                cell.style.backgroundColor = EventStyles.correct[wrongGuesses] || EventStyles.correct[EventStyles.correct.length - 1];
             }
             else {
                 cell.classList.add(EventStyles.onCorrect, 'cursor-default');
                 setTimeout(() => {
                     cell.classList.remove(EventStyles.onCorrect);
-                    cell.style.backgroundColor = EventStyles.correct;
+                    cell.style.backgroundColor = EventStyles.correct[wrongGuesses] || EventStyles.correct[EventStyles.correct.length - 1];
                 }, VanishTimeOut);
             }
             setWrongGuesses(0);
         }
         else {
+            setArcadeTime(prev => prev - config.arcade.penaltyTime);
             if (config.errorProtection) {
                 cell.classList.add(EventStyles.onWrong, 'cursor-default');
             }
@@ -204,7 +215,7 @@ export default function PeriodicTable({ game, config, lang, tableSize, draft, se
     }
 
     return (
-        <table className="border-collapse">
+        <table className={`border-collapse table-auto xl:w-full ${paused ? 'pointer-events-none' : ''}`}>
             <thead>
                 <tr>
                     {Families.map((f, i) => <th className={`p-0 font-semibold dark:text-white ${TableSize.height} ${TableSize.protonSize}`} key={i}>{f}</th>)}
@@ -224,7 +235,7 @@ export default function PeriodicTable({ game, config, lang, tableSize, draft, se
                             n++;
                             return <Cell
                                 onClick={PlayerClick}
-                                config={config}
+                                config={config.table}
                                 key={path.family + j + i}
                                 type={path.type}
                                 protons={path.protons}

@@ -1,3 +1,5 @@
+import { ButtonHeight, ButtonWidth } from "../types";
+
 export default function TableSizeInput({ value, onChange }: { value: number, onChange: (val: number) => void }) {
     const onEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
         let InputVal = e.target.value.replace(/\D/g, '');
@@ -8,8 +10,8 @@ export default function TableSizeInput({ value, onChange }: { value: number, onC
     };
 
     return (
-        <div className="grid grid-cols-2 gap-1 md:max-w-[228px]">
-            <label htmlFor="tableSize" className="bg-stone-100 dark:bg-white rounded text-center font-semibold min-w-28 h-10 content-center">
+        <div className="grid grid-cols-2 gap-1">
+            <label htmlFor="tableSize" className={`bg-stone-100 ${ButtonHeight} ${ButtonWidth} dark:bg-white rounded text-center font-semibold content-center`}>
                 Table Size
             </label>
             <input
@@ -18,7 +20,7 @@ export default function TableSizeInput({ value, onChange }: { value: number, onC
                 inputMode="numeric"
                 value={value.toString()}
                 onChange={onEvent}
-                className="min-w-28 h-10 px-4 text-center dark:bg-sky-400 font-semibold bg-blue-100 rounded"
+                className={`px-4 ${ButtonHeight} ${ButtonWidth} text-center dark:bg-sky-400 font-semibold bg-blue-100 rounded`}
             />
         </div>
     )

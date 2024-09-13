@@ -17,7 +17,7 @@ const CreateHintCell = ({ mainkey, val, increments }: { mainkey: string, val: st
     return (
         <div className={`${increments ? increments : ""} grid grid-cols-2 gap-x-2`}>
             <span className="text-sky-950 dark:text-white font-semibold">{mainkey.charAt(0).toUpperCase() + mainkey.substring(1)}</span>
-            <span className="text-red-700 dark:text-red-300 font-semibold" dangerouslySetInnerHTML={{ __html: val }} />
+            <span className="text-red-700 dark:text-cyan-300 font-semibold" dangerouslySetInnerHTML={{ __html: val }} />
         </div>
     )
 }
@@ -25,7 +25,6 @@ const CreateHintCell = ({ mainkey, val, increments }: { mainkey: string, val: st
 export default function Hintbox({ config, draft, language }: { config: Difficulty["hints"], draft: GameProps[number], language: Lang }) {
     const Entries = Object.entries(config).filter(([_, val]) => Boolean(val));
     return Entries.length ? <>
-        <h2 className="text-lg text-center font-bold my-2 dark:text-white">Hints</h2>
         <section className="min-w-64 rounded grid grid-cols-1 sm:grid-cols-[auto,auto] gap-1 gap-x-8">
             {Entries.map(([key, _]) => (
                 <CreateHintCell
