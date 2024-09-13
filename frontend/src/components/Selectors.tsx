@@ -1,12 +1,12 @@
-import { ButtonHeight, ButtonWidth, Difficulty, SectionMaxWidth } from "../types";
+import { ButtonHeight, ButtonWidth, Difficulty, Lang, SectionMaxWidth, Translations } from "../types";
 
-const InputCheckbox = ({ path, name, onEvent, mainkey, subkey, setCustom, increments }: { path: boolean, name: string, onEvent: (key: keyof Omit<Difficulty, 'arcade'>, val: boolean, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"]) => void, mainkey: keyof Omit<Difficulty, 'arcade'>, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"], setCustom: () => void, increments?: string }) => {
+const InputCheckbox = ({ path, name, onEvent, mainkey, subkey, setCustom }: { path: boolean, name: string, onEvent: (key: keyof Omit<Difficulty, 'arcade'>, val: boolean, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"]) => void, mainkey: keyof Omit<Difficulty, 'arcade'>, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"], setCustom: () => void }) => {
     const onChange = () => {
         onEvent(mainkey, !path, subkey);
         setCustom();
     }
     return (
-        <label className={increments ? increments : ""} htmlFor={name + mainkey}>
+        <label htmlFor={name + mainkey}>
             <div className={`select-none has-[:checked]:bg-emerald-300 dark:has-[:checked]:bg-emerald-300 ${ButtonWidth} cursor-pointer text-nowrap ${ButtonHeight} text-center px-4 dark:bg-rose-300 bg-rose-100 rounded transition-all duration-300 justify-center flex items-center text-black`}>
                 <input
                     type="checkbox"
@@ -21,49 +21,51 @@ const InputCheckbox = ({ path, name, onEvent, mainkey, subkey, setCustom, increm
     )
 }
 
-export default function Selectors({ config, onEvent, setCustom }: { config: Difficulty | undefined, onEvent: (key: keyof Omit<Difficulty, 'arcade'>, val: boolean, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"]) => void, setCustom: () => void }) {
-    type HintProps<T extends keyof Difficulty> = { subkey: keyof Difficulty[T], name: string }[]
+export default function Selectors({ config, language, onEvent, setCustom }: { config: Difficulty | undefined, language: Lang, onEvent: (key: keyof Omit<Difficulty, 'arcade'>, val: boolean, subkey?: keyof Difficulty["hints"] | keyof Difficulty["table"]) => void, setCustom: () => void }) {
     const HintSettings = [
-        { subkey: "name", name: "Name" },
-        { subkey: "mass", name: "Mass" },
-        { subkey: "electron", name: "Electrons" },
-        { subkey: "group", name: "Group" },
-        { subkey: "period", name: "Period" },
-        { subkey: "block", name: "Block" },
-        { subkey: "family", name: "Family" },
-        { subkey: "type", name: "Type" },
-        { subkey: "protons", name: "Protons" }
-    ] as HintProps<"hints">;
+        "name",
+        "symbol",
+        "mass",
+        "electron",
+        "group",
+        "period",
+        "block",
+        "family",
+        "type",
+        "protons"
+    ] as const;
+
     const TableSettings = [
-        { subkey: "protons", name: "Protons" },
-        { subkey: "symbol", name: "Symbol" },
-        { subkey: "colors", name: "Colors" },
-        { subkey: "name", name: "Name" },
-    ] as HintProps<"table">;
+        "protons",
+        "symbol",
+        "colors",
+        "name",
+    ] as const;
+
     return (
         <>
             {config && (
-                <div className="flex flex-col w-full md:w-fit">
+                <div className="flex flex-col max-w-sm w-full md:w-fit">
                     <section className={`flex flex-col ${SectionMaxWidth}`}>
                         <div className="flex flex-col">
-                            <h2 className="text-lg font-semibold h-11 content-center dark:text-white">General Settings</h2>
+                            <h2 className="text-lg font-semibold h-11 content-center dark:text-white">{Translations.generalSettings.title[language]}</h2>
                             <div className="flex flex-col gap-1">
-                                <InputCheckbox setCustom={setCustom} onEvent={onEvent} mainkey="answerPersist" path={config.answerPersist} name="Answer Persist" />
-                                <InputCheckbox setCustom={setCustom} onEvent={onEvent} mainkey="errorProtection" path={config.errorProtection} name="Error Protection" />
+                                <InputCheckbox setCustom={setCustom} onEvent={onEvent} mainkey="answerPersist" path={config.answerPersist} name={Translations.generalSettings.answerPersist[language]} />
+                                <InputCheckbox setCustom={setCustom} onEvent={onEvent} mainkey="errorProtection" path={config.errorProtection} name={Translations.generalSettings.errorProtection[language]} />
                             </div>
                         </div>
                         <div className="flex flex-col">
-                            <h2 className="text-lg font-semibold h-11 my-0.5 content-center dark:text-white">Table Settings</h2>
+                            <h2 className="text-lg font-semibold h-11 my-0.5 content-center dark:text-white">{Translations.tableSettings.title[language]}</h2>
                             <div className="grid grid-cols-2 gap-1">
-                                {TableSettings.map(({ subkey, name }) => (
+                                {TableSettings.map(x => (
                                     <InputCheckbox
-                                        key={subkey}
+                                        key={x}
                                         setCustom={setCustom}
                                         onEvent={onEvent}
                                         mainkey="table"
-                                        subkey={subkey as keyof Difficulty["table"]}
-                                        path={config.table[subkey]}
-                                        name={name}
+                                        subkey={x as keyof Difficulty["table"]}
+                                        path={config.table[x]}
+                                        name={Translations.tableSettings[x][language]}
                                     />
                                 ))}
                             </div>
@@ -71,18 +73,17 @@ export default function Selectors({ config, onEvent, setCustom }: { config: Diff
                     </section>
                     <section className={`flex flex-col ${SectionMaxWidth}`}>
                         <div className="flex flex-col">
-                            <h2 className="text-lg font-semibold h-11 content-center dark:text-white">Hint Settings</h2>
+                            <h2 className="text-lg font-semibold h-11 content-center dark:text-white">{Translations.hintSettings.title[language]}</h2>
                             <div className="grid grid-cols-2 gap-1">
-                                {HintSettings.map(({ subkey, name }, i) => (
+                                {HintSettings.map((x, i) => (
                                     <InputCheckbox
                                         setCustom={setCustom}
-                                        key={subkey + i}
+                                        key={x + i}
                                         onEvent={onEvent}
                                         mainkey="hints"
-                                        subkey={subkey as keyof Difficulty["hints"]}
-                                        path={config.hints[subkey]}
-                                        name={name}
-                                        increments={HintSettings.length % 2 !== 0 && i === HintSettings.length - 1 ? "col-span-2" : ""}
+                                        subkey={x as keyof Difficulty["hints"]}
+                                        path={config.hints[x]}
+                                        name={Translations.hintSettings[x][language]}
                                     />
                                 ))}
                             </div>

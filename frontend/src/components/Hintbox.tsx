@@ -1,6 +1,6 @@
-import { Difficulty, GameProps, Lang } from "../types"
+import { Difficulty, GameProps, Lang, Translations } from "../types"
 
-const CreateHintCell = ({ mainkey, val, increments }: { mainkey: string, val: string, increments: boolean }) => {
+const CreateHintCell = ({ mainkey, val, increments, language }: { mainkey: string, val: string, language: Lang, increments: boolean }) => {
     switch (mainkey) {
         case "electron":
             val = val.replace(/\^(\d+)/g, "<sup>$1</sup>");
@@ -16,7 +16,7 @@ const CreateHintCell = ({ mainkey, val, increments }: { mainkey: string, val: st
     }
     return (
         <div className={`${increments ? "col-span-2 w-fit gap-x-4" : "gap-x-2"} grid grid-cols-2`}>
-            <span className="text-sky-950 dark:text-white font-semibold">{mainkey.charAt(0).toUpperCase() + mainkey.substring(1)}</span>
+            <span className="text-sky-950 dark:text-white font-semibold">{Translations.hintSettings[mainkey as keyof typeof Translations.hintSettings][language]}</span>
             <span className="text-red-700 dark:text-cyan-300 font-semibold" dangerouslySetInnerHTML={{ __html: val }} />
         </div>
     )
@@ -31,7 +31,8 @@ export default function Hintbox({ config, draft, language }: { config: Difficult
                     key={key}
                     increments={Entries.length === 1}
                     mainkey={key}
-                    val={key === "name" ? draft[language][key] : draft[key as keyof typeof draft].toString()}
+                    language={language}
+                    val={key === "name" || key === "type" ? draft[language][key] : draft[key as keyof typeof draft].toString()}
                 />
             ))}
         </section>

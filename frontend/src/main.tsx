@@ -7,9 +7,7 @@ import Game from './Game';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Router>
     <Routes>
-      {/* <Route path="/react/periodictable/" element={<Game />} /> As public instance */}
-      {/* Use root route path if using as local instance */}
-      <Route path="/" element={<Game />} />
+      <Route path="/react/periodictable/" element={<Game />} />
     </Routes>
   </Router>
 );

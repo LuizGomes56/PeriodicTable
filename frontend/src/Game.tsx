@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ButtonHeight, ButtonWidth, Diff, Difficulties, Difficulty, Gamemodes, GameProps, GameSettings, Lang, Languages, LocalStorageData, SectionMaxWidth } from "./types";
+import { ButtonHeight, ButtonWidth, Diff, Difficulties, Difficulty, Gamemodes, GameProps, GameSettings, Lang, Languages, LocalStorageData, Mode, SectionMaxWidth, Translations } from "./types";
 import PeriodicTable from "./components/PeriodicTable";
 import VoidPeriodicTable from "./components/VoidPeriodicTable";
 import Selectors from "./components/Selectors";
@@ -58,36 +58,52 @@ const FetchSettings = async (): Promise<GameSettings | null> => {
     return null;
 }
 
-const CreateSelector = ({ array, type, onChange, value }: { array: string[], type: string, value: string, onChange: (value: any) => void }) => {
+const CreateSelector = ({ array, type, onChange, value, language }: { array: string[], type: string, value: string, onChange: (value: any) => void, language: Lang }) => {
     return (
         <>
-            {array.map((e, i) => (
-                <label htmlFor={e} key={i} className={`${array.length % 2 !== 0 && i === array.length - 1 ? "col-span-2" : ""} ${ButtonHeight} ${ButtonWidth}`}>
-                    <div className="select-none has-[:checked]:bg-sky-300 cursor-pointer h-full px-4 bg-blue-100 dark:bg-white dark:has-[:checked]:bg-sky-400 rounded transition-all duration-300 justify-center flex items-center text-black">
-                        <input
-                            type="radio"
-                            name={type}
-                            id={e}
-                            className="appearance-none hidden"
-                            onChange={() => onChange(e)}
-                            checked={value === e}
-                        />
-                        <span className="font-medium">{e.charAt(0).toUpperCase() + e.slice(1)}</span>
-                    </div>
-                </label>
-            ))}
+            {array.map((e, i) => {
+                let text = "";
+                switch (type) {
+                    case "gamemode":
+                        let a = Translations.gamemode[language]
+                        text = a[e as keyof typeof a];
+                        break;
+                    case "language":
+                        text = Translations.language[e as Lang];
+                        break;
+                    case "difficulty":
+                        let c = Translations.difficulty[language];
+                        text = c[e as keyof typeof c];
+                        break;
+                }
+                return (
+                    <label htmlFor={e} key={i} className={`${array.length % 2 !== 0 && i === array.length - 1 ? "col-span-2" : ""} ${ButtonHeight} ${ButtonWidth}`}>
+                        <div className="select-none has-[:checked]:bg-sky-300 cursor-pointer h-full px-4 bg-blue-100 dark:bg-white dark:has-[:checked]:bg-sky-400 rounded transition-all duration-300 justify-center flex items-center text-black">
+                            <input
+                                type="radio"
+                                name={type}
+                                id={e}
+                                className="appearance-none hidden"
+                                onChange={() => onChange(e)}
+                                checked={value === e}
+                            />
+                            <span className="font-medium">{text}</span>
+                        </div>
+                    </label>
+                )
+            })}
         </>
     )
 }
 
-const CreateSettingsSelector = ({ array, type, onChange, value }: { array: string[], type: string, value: string, onChange: (value: any) => void }) => {
+const CreateSettingsSelector = ({ array, type, onChange, value, language }: { array: string[], language: Lang, type: string, value: string, onChange: (value: any) => void }) => {
     return (
         <section className={`${SectionMaxWidth}`}>
             <h2 className="font-semibold text-lg my-2 dark:text-white">
-                {type.charAt(0).toUpperCase() + type.substring(1)}
+                {Translations.language.title[language]}
             </h2>
             <span className="grid grid-cols-2 gap-1">
-                <CreateSelector array={Object.values(array)} value={value} type={type} onChange={onChange} />
+                <CreateSelector array={Object.values(array)} value={value} type={type} onChange={onChange} language={language} />
             </span>
         </section>
     )
@@ -97,7 +113,7 @@ const SessionData = ({ text, value }: { text: string, value: string | number }) 
     return (
         <div className="grid grid-cols-2 gap-x-2">
             <span className="text-sky-950 dark:text-white font-semibold">{text}</span>
-            <span className="text-red-700 dark:text-emerald-300 text-center font-semibold">{value}</span>
+            <span className="text-red-700 dark:text-emerald-300 md:text-center font-semibold">{value}</span>
         </div>
     )
 }
@@ -109,7 +125,7 @@ export default function Game() {
     const [tableSize, setTableSize] = useState<number>(8);
     const [difficulty, setDifficulty] = useState<Diff>("custom");
     const [language, setLanguage] = useState<Lang>("enUS");
-    const [gamemode, setGamemode] = useState<"classic" | "arcade">("arcade");
+    const [gamemode, setGamemode] = useState<Mode>("classic");
     const [started, setStarted] = useState<boolean>(true);
     const [paused, setPaused] = useState<boolean>(false);
     const [arcadeTime, setArcadeTime] = useState<number>(MinimumArcadeTime);
@@ -231,7 +247,7 @@ export default function Game() {
     const GetLocalStorage = (x: boolean): void => {
         const sess = window.localStorage.getItem("periodicTableGame");
         if (sess) {
-            const jSess = JSON.parse(sess) as Omit<LocalStorageData, "game" | "settings">;
+            const jSess = JSON.parse(sess) as Omit<LocalStorageData, "game" | "settings" | "tableSize">;
             if (!x) {
                 setDifficulty(jSess.difficulty);
                 setGamemode(jSess.gamemode);
@@ -275,10 +291,31 @@ export default function Game() {
     const Random = (opt: number[]) => opt[Math.floor(Math.random() * opt.length)];
 
     const Load = async () => {
-        const g = await FetchGame();
-        const s = await FetchSettings();
-        setGame(g);
-        setSettings(s);
+        const Storage = window.localStorage.getItem("periodicTableGame");
+        if (Storage) {
+            const StorageJson = JSON.parse(Storage) as LocalStorageData;
+            if (!StorageJson.game) {
+                const g = await FetchGame();
+                StorageJson.game = g as GameProps;
+                setGame(g);
+            }
+            if (!StorageJson.settings) {
+                const s = await FetchSettings();
+                StorageJson.settings = s as GameSettings;
+                setSettings(s);
+                if (!config && s) {
+                    const path = s.difficulties[difficulty];
+                    setConfig(path);
+                    setArcadeTime(path.arcade.totalTime);
+                }
+            }
+        }
+        else {
+            const g = await FetchGame();
+            const s = await FetchSettings();
+            setGame(g);
+            setSettings(s);
+        }
 
         const urlParams = new URLSearchParams(window.location.search);
         const urlData = urlParams.get('data');
@@ -301,12 +338,6 @@ export default function Game() {
             }
         }
         GetLocalStorage(operation);
-
-        if (!config && s) {
-            const path = s.difficulties[difficulty];
-            setConfig(path);
-            setArcadeTime(path.arcade.totalTime);
-        }
     };
 
     useSkipRender(() => {
@@ -340,39 +371,39 @@ export default function Game() {
     const SetCustomDifficulty = () => setDifficulty("custom");
 
     return (
-        <div className="mx-auto sm:p-2 md:p-0 mb-4 flex flex-wrap">
-            <div className="flex flex-wrap pl-4">
-                <div className="w-full md:w-auto flex gap-4 justify-between flex-wrap">
-                    <section className="flex flex-col w-full md:w-fit">
+        <div className="mx-auto sm:p-2 md:p-0 mb-4 flex flex-wrap justify-center max-w-screen-2xl">
+            <div className="flex flex-wrap w-full md:w-auto justify-center px-4 md:pl-4 md:pr-0">
+                <div className="md:w-auto flex gap-4 flex-wrap justify-center">
+                    <section className="flex flex-col w-full max-w-sm md:w-fit">
                         <section className={`${SectionMaxWidth}`}>
                             <h2 className="font-semibold text-lg my-2 dark:text-white">
                                 Page Settings
                             </h2>
                             <span className="grid grid-cols-1 gap-1">
-                                <Darkmode darkmode={darkmode} onChange={() => setDarkmode(prev => !prev)} />
-                                <TableSizeInput value={tableSize} onChange={setTableSize} />
+                                <Darkmode language={language} darkmode={darkmode} onChange={() => setDarkmode(prev => !prev)} />
+                                <TableSizeInput language={language} value={tableSize} onChange={setTableSize} />
                             </span>
                         </section>
                         <span className="flex flex-col">
-                            <CreateSettingsSelector type="language" value={language} onChange={setLanguage} array={Object.values(Languages)} />
-                            <CreateSettingsSelector type="gamemode" value={gamemode} onChange={setGamemode} array={Object.values(Gamemodes)} />
+                            <CreateSettingsSelector language={language} type="language" value={language} onChange={setLanguage} array={Object.values(Languages)} />
+                            <CreateSettingsSelector language={language} type="gamemode" value={gamemode} onChange={setGamemode} array={Object.values(Gamemodes)} />
                         </span>
-                        <CreateSettingsSelector type="difficulty" value={difficulty} onChange={setDifficulty} array={Object.values(Difficulties)} />
+                        <CreateSettingsSelector language={language} type="difficulty" value={difficulty} onChange={setDifficulty} array={Object.values(Difficulties)} />
                         {config && gamemode == "arcade" && <section className={`${SectionMaxWidth}`}>
                             <h2 className="font-semibold text-lg my-2 dark:text-white">
-                                Arcade Settings
+                                {Translations.arcadeSettings.title[language]}
                             </h2>
                             <span className="grid grid-cols-1 gap-1">
-                                <ArcadeEditor setCustom={SetCustomDifficulty} name="Total Time" mainkey="totalTime" value={config.arcade.totalTime} onChange={ChangeArcadeSettings} />
-                                <ArcadeEditor setCustom={SetCustomDifficulty} name="Bonus Time" mainkey="bonusTime" value={config.arcade.bonusTime} onChange={ChangeArcadeSettings} />
-                                <ArcadeEditor setCustom={SetCustomDifficulty} name="Penalty Time" mainkey="penaltyTime" value={config.arcade.penaltyTime} onChange={ChangeArcadeSettings} />
+                                <ArcadeEditor setCustom={SetCustomDifficulty} name={Translations.arcadeSettings.totalTime[language]} mainkey="totalTime" value={config.arcade.totalTime} onChange={ChangeArcadeSettings} />
+                                <ArcadeEditor setCustom={SetCustomDifficulty} name={Translations.arcadeSettings.bonusTime[language]} mainkey="bonusTime" value={config.arcade.bonusTime} onChange={ChangeArcadeSettings} />
+                                <ArcadeEditor setCustom={SetCustomDifficulty} name={Translations.arcadeSettings.penaltyTime[language]} mainkey="penaltyTime" value={config.arcade.penaltyTime} onChange={ChangeArcadeSettings} />
                             </span>
                         </section>}
                     </section>
-                    {config && <Selectors config={config} setCustom={SetCustomDifficulty} onEvent={ChangeSettings} />}
+                    {config && <Selectors language={language} config={config} setCustom={SetCustomDifficulty} onEvent={ChangeSettings} />}
                 </div>
             </div>
-            <div className="overflow-auto scrollbar flex-auto px-4">
+            <div className="overflow-auto scrollbar flex-auto px-4 max-w-7xl">
                 <section className="mt-4 flex gap-x-8 gap-y-4 justify-center flex-wrap mb-4 md:mb-0">
                     <div className="flex gap-4">
                     </div>
@@ -382,21 +413,21 @@ export default function Game() {
                                 onClick={PauseOrResume}
                                 type="button"
                                 className={`font-semibold ${paused ? "dark:bg-emerald-300 bg-emerald-500" : "bg-red-500 dark:bg-red-300"} ${ButtonWidth} ${ButtonHeight} py-2 px-4 rounded`}>
-                                {paused ? "Resume" : "Pause"}
+                                {paused ? Translations.gameStatus.resume[language] : Translations.gameStatus.pause[language]}
                             </button>
                             <button
                                 onClick={RestartEvent}
                                 type="button"
                                 className={`bg-amber-500 dark:bg-yellow-300 ${ButtonWidth} ${ButtonHeight} font-semibold py-2 px-4 rounded`}>
-                                Restart
+                                {Translations.gameStatus.restart[language]}
                             </button>
                         </div>
                         <div className="flex flex-col items-center w-full md:w-auto">
                             <section className="min-w-64 rounded grid grid-cols-1 sm:grid-cols-[auto,auto] gap-1 gap-x-2">
-                                <SessionData text="Attempts" value={count} />
-                                <SessionData text="Score" value={`${118 - options.length} / 118`} />
-                                <SessionData text="Time" value={gamemode == "arcade" ? arcadeTime > 1E5 ? "∞" : arcadeTime : time} />
-                                <SessionData text="Errors" value={count - (118 - options.length)} />
+                                <SessionData text={Translations.gameStatus.attempts[language]} value={count} />
+                                <SessionData text={Translations.gameStatus.score[language]} value={`${118 - options.length} / 118`} />
+                                <SessionData text={Translations.gameStatus.time[language]} value={gamemode == "arcade" ? arcadeTime > 1E5 ? "∞" : arcadeTime : time} />
+                                <SessionData text={Translations.gameStatus.errors[language]} value={count - (118 - options.length)} />
                             </section>
                         </div>
                         <div className="flex flex-col items-center w-full md:w-auto">
@@ -411,7 +442,7 @@ export default function Game() {
                         </button>
                     }
                 </section>
-                <div className="flex min-w-max w-full max-w-7xl">
+                <div className="flex min-w-max w-full justify-center">
                     {game && config ?
                         <PeriodicTable setCount={setCount} started={started} paused={paused} setOptions={setOptions} setArcadeTime={setArcadeTime} draft={draft} tableSize={tableSize} game={game} config={config} lang={language} /> : <VoidPeriodicTable />}
                 </div>

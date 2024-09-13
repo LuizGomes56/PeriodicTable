@@ -8,15 +8,18 @@
         "family": "1A",
         "period": "1",
         "block": "s",
-        "type": "alkali",
+        "typeClass": "alkali",
         "ptBR": {
-            "name": "Hidrogênio"
+            "name": "Hidrog\u00eanio",
+            "type": "Alcalino"
         },
         "enUS": {
-            "name": "Hydrogen"
+            "name": "Hydrogen",
+            "type": "Alkali"
         },
         "esES": {
-            "name": "Hidrógeno"
+            "name": "Hidr\u00f3geno",
+            "type": "Alcalino"
         }
     },
     {
@@ -28,15 +31,18 @@
         "family": "18",
         "period": "1",
         "block": "s",
-        "type": "nobleGas",
+        "typeClass": "nobleGas",
         "ptBR": {
-            "name": "Hélio"
+            "name": "H\u00e9lio",
+            "type": "G\u00e1s nobre"
         },
         "enUS": {
-            "name": "Helium"
+            "name": "Helium",
+            "type": "Noble gas"
         },
         "esES": {
-            "name": "Helio"
+            "name": "Helio",
+            "type": "Gas noble"
         }
     },
     {
@@ -48,15 +54,18 @@
         "family": "1A",
         "period": "2",
         "block": "s",
-        "type": "alkali",
+        "typeClass": "alkali",
         "ptBR": {
-            "name": "Lítio"
+            "name": "L\u00edtio",
+            "type": "Alcalino"
         },
         "enUS": {
-            "name": "Lithium"
+            "name": "Lithium",
+            "type": "Alkali"
         },
         "esES": {
-            "name": "Litio"
+            "name": "Litio",
+            "type": "Alcalino"
         }
     },
     {
@@ -68,15 +77,18 @@
         "family": "2A",
         "period": "2",
         "block": "s",
-        "type": "alkaliEarth",
+        "typeClass": "alkaliEarth",
         "ptBR": {
-            "name": "Berílio"
+            "name": "Ber\u00edlio",
+            "type": "Alcalino-terroso"
         },
         "enUS": {
-            "name": "Beryllium"
+            "name": "Beryllium",
+            "type": "Alkaline earth"
         },
         "esES": {
-            "name": "Berilio"
+            "name": "Berilio",
+            "type": "Alcalinot\u00e9rreo"
         }
     },
     {
@@ -88,15 +100,18 @@
         "family": "3A",
         "period": "2",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Boro"
+            "name": "Boro",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Boron"
+            "name": "Boron",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Boro"
+            "name": "Boro",
+            "type": "Metaloide"
         }
     },
     {
@@ -108,15 +123,18 @@
         "family": "4A",
         "period": "2",
         "block": "p",
-        "type": "nonMetal",
+        "typeClass": "nonMetal",
         "ptBR": {
-            "name": "Carbono"
+            "name": "Carbono",
+            "type": "N\u00e3o-metal"
         },
         "enUS": {
-            "name": "Carbon"
+            "name": "Carbon",
+            "type": "Non-metal"
         },
         "esES": {
-            "name": "Carbono"
+            "name": "Carbono",
+            "type": "No metal"
         }
     },
     {
@@ -128,15 +146,18 @@
         "family": "5A",
         "period": "2",
         "block": "p",
-        "type": "nonMetal",
+        "typeClass": "nonMetal",
         "ptBR": {
-            "name": "Nitrogênio"
+            "name": "Nitrog\u00eanio",
+            "type": "N\u00e3o-metal"
         },
         "enUS": {
-            "name": "Nitrogen"
+            "name": "Nitrogen",
+            "type": "Non-metal"
         },
         "esES": {
-            "name": "Nitrógeno"
+            "name": "Nitr\u00f3geno",
+            "type": "No metal"
         }
     },
     {
@@ -148,15 +169,18 @@
         "family": "6A",
         "period": "2",
         "block": "p",
-        "type": "nonMetal",
+        "typeClass": "nonMetal",
         "ptBR": {
-            "name": "Oxigênio"
+            "name": "Oxig\u00eanio",
+            "type": "N\u00e3o-metal"
         },
         "enUS": {
-            "name": "Oxygen"
+            "name": "Oxygen",
+            "type": "Non-metal"
         },
         "esES": {
-            "name": "Oxígeno"
+            "name": "Ox\u00edgeno",
+            "type": "No metal"
         }
     },
     {
@@ -168,15 +192,18 @@
         "family": "7A",
         "period": "2",
         "block": "p",
-        "type": "halogen",
+        "typeClass": "halogen",
         "ptBR": {
-            "name": "Flúor"
+            "name": "Fl\u00faor",
+            "type": "Halog\u00eanio"
         },
         "enUS": {
-            "name": "Fluorine"
+            "name": "Fluorine",
+            "type": "Halogen"
         },
         "esES": {
-            "name": "Flúor"
+            "name": "Fl\u00faor",
+            "type": "Hal\u00f3geno"
         }
     },
     {
@@ -188,15 +215,18 @@
         "family": "18",
         "period": "2",
         "block": "p",
-        "type": "nobleGas",
+        "typeClass": "nobleGas",
         "ptBR": {
-            "name": "Neônio"
+            "name": "Ne\u00f4nio",
+            "type": "G\u00e1s nobre"
         },
         "enUS": {
-            "name": "Neon"
+            "name": "Neon",
+            "type": "Noble gas"
         },
         "esES": {
-            "name": "Neón"
+            "name": "Ne\u00f3n",
+            "type": "Gas noble"
         }
     },
     {
@@ -208,15 +238,18 @@
         "family": "1A",
         "period": "3",
         "block": "s",
-        "type": "alkali",
+        "typeClass": "alkali",
         "ptBR": {
-            "name": "Sódio"
+            "name": "S\u00f3dio",
+            "type": "Alcalino"
         },
         "enUS": {
-            "name": "Sodium"
+            "name": "Sodium",
+            "type": "Alkali"
         },
         "esES": {
-            "name": "Sodio"
+            "name": "Sodio",
+            "type": "Alcalino"
         }
     },
     {
@@ -228,15 +261,18 @@
         "family": "2A",
         "period": "3",
         "block": "s",
-        "type": "alkaliEarth",
+        "typeClass": "alkaliEarth",
         "ptBR": {
-            "name": "Magnésio"
+            "name": "Magn\u00e9sio",
+            "type": "Alcalino-terroso"
         },
         "enUS": {
-            "name": "Magnesium"
+            "name": "Magnesium",
+            "type": "Alkaline earth"
         },
         "esES": {
-            "name": "Magnesio"
+            "name": "Magnesio",
+            "type": "Alcalinot\u00e9rreo"
         }
     },
     {
@@ -248,15 +284,18 @@
         "family": "3A",
         "period": "3",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Alumínio"
+            "name": "Alum\u00ednio",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Aluminum"
+            "name": "Aluminum",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Aluminio"
+            "name": "Aluminio",
+            "type": "Metaloide"
         }
     },
     {
@@ -268,15 +307,18 @@
         "family": "4A",
         "period": "3",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Silício"
+            "name": "Sil\u00edcio",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Silicon"
+            "name": "Silicon",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Silicio"
+            "name": "Silicio",
+            "type": "Metaloide"
         }
     },
     {
@@ -288,15 +330,18 @@
         "family": "5A",
         "period": "3",
         "block": "p",
-        "type": "nonMetal",
+        "typeClass": "nonMetal",
         "ptBR": {
-            "name": "Fósforo"
+            "name": "F\u00f3sforo",
+            "type": "N\u00e3o-metal"
         },
         "enUS": {
-            "name": "Phosphorus"
+            "name": "Phosphorus",
+            "type": "Non-metal"
         },
         "esES": {
-            "name": "Fósforo"
+            "name": "F\u00f3sforo",
+            "type": "No metal"
         }
     },
     {
@@ -308,15 +353,18 @@
         "family": "6A",
         "period": "3",
         "block": "p",
-        "type": "nonMetal",
+        "typeClass": "nonMetal",
         "ptBR": {
-            "name": "Enxofre"
+            "name": "Enxofre",
+            "type": "N\u00e3o-metal"
         },
         "enUS": {
-            "name": "Sulfur"
+            "name": "Sulfur",
+            "type": "Non-metal"
         },
         "esES": {
-            "name": "Azufre"
+            "name": "Azufre",
+            "type": "No metal"
         }
     },
     {
@@ -328,15 +376,18 @@
         "family": "7A",
         "period": "3",
         "block": "p",
-        "type": "halogen",
+        "typeClass": "halogen",
         "ptBR": {
-            "name": "Cloro"
+            "name": "Cloro",
+            "type": "Halog\u00eanio"
         },
         "enUS": {
-            "name": "Chlorine"
+            "name": "Chlorine",
+            "type": "Halogen"
         },
         "esES": {
-            "name": "Cloro"
+            "name": "Cloro",
+            "type": "Hal\u00f3geno"
         }
     },
     {
@@ -348,15 +399,18 @@
         "family": "18",
         "period": "3",
         "block": "p",
-        "type": "nobleGas",
+        "typeClass": "nobleGas",
         "ptBR": {
-            "name": "Argônio"
+            "name": "Arg\u00f4nio",
+            "type": "G\u00e1s nobre"
         },
         "enUS": {
-            "name": "Argon"
+            "name": "Argon",
+            "type": "Noble gas"
         },
         "esES": {
-            "name": "Argón"
+            "name": "Arg\u00f3n",
+            "type": "Gas noble"
         }
     },
     {
@@ -368,15 +422,18 @@
         "family": "1A",
         "period": "4",
         "block": "s",
-        "type": "alkali",
+        "typeClass": "alkali",
         "ptBR": {
-            "name": "Potássio"
+            "name": "Pot\u00e1ssio",
+            "type": "Alcalino"
         },
         "enUS": {
-            "name": "Potassium"
+            "name": "Potassium",
+            "type": "Alkali"
         },
         "esES": {
-            "name": "Potasio"
+            "name": "Potasio",
+            "type": "Alcalino"
         }
     },
     {
@@ -388,15 +445,18 @@
         "family": "2A",
         "period": "4",
         "block": "s",
-        "type": "alkaliEarth",
+        "typeClass": "alkaliEarth",
         "ptBR": {
-            "name": "Cálcio"
+            "name": "C\u00e1lcio",
+            "type": "Alcalino-terroso"
         },
         "enUS": {
-            "name": "Calcium"
+            "name": "Calcium",
+            "type": "Alkaline earth"
         },
         "esES": {
-            "name": "Calcio"
+            "name": "Calcio",
+            "type": "Alcalinot\u00e9rreo"
         }
     },
     {
@@ -408,15 +468,18 @@
         "family": "3B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Escândio"
+            "name": "Esc\u00e2ndio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Scandium"
+            "name": "Scandium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Escandio"
+            "name": "Escandio",
+            "type": "Metal"
         }
     },
     {
@@ -428,15 +491,18 @@
         "family": "4B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Titânio"
+            "name": "Tit\u00e2nio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Titanium"
+            "name": "Titanium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Titanio"
+            "name": "Titanio",
+            "type": "Metal"
         }
     },
     {
@@ -448,15 +514,18 @@
         "family": "5B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Vanádio"
+            "name": "Van\u00e1dio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Vanadium"
+            "name": "Vanadium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Vanadio"
+            "name": "Vanadio",
+            "type": "Metal"
         }
     },
     {
@@ -468,15 +537,18 @@
         "family": "6B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Cromo"
+            "name": "Cromo",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Chromium"
+            "name": "Chromium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Cromo"
+            "name": "Cromo",
+            "type": "Metal"
         }
     },
     {
@@ -488,15 +560,18 @@
         "family": "7B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Manganês"
+            "name": "Mangan\u00eas",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Manganese"
+            "name": "Manganese",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Manganeso"
+            "name": "Manganeso",
+            "type": "Metal"
         }
     },
     {
@@ -508,15 +583,18 @@
         "family": "8B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Ferro"
+            "name": "Ferro",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Iron"
+            "name": "Iron",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Hierro"
+            "name": "Hierro",
+            "type": "Metal"
         }
     },
     {
@@ -528,15 +606,18 @@
         "family": "9B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Cobalto"
+            "name": "Cobalto",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Cobalt"
+            "name": "Cobalt",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Cobalto"
+            "name": "Cobalto",
+            "type": "Metal"
         }
     },
     {
@@ -548,15 +629,18 @@
         "family": "10B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Níquel"
+            "name": "N\u00edquel",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Nickel"
+            "name": "Nickel",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Níquel"
+            "name": "N\u00edquel",
+            "type": "Metal"
         }
     },
     {
@@ -568,15 +652,18 @@
         "family": "1B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Cobre"
+            "name": "Cobre",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Copper"
+            "name": "Copper",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Cobre"
+            "name": "Cobre",
+            "type": "Metal"
         }
     },
     {
@@ -588,15 +675,18 @@
         "family": "2B",
         "period": "4",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Zinco"
+            "name": "Zinco",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Zinc"
+            "name": "Zinc",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Zinc"
+            "name": "Zinc",
+            "type": "Metal"
         }
     },
     {
@@ -608,15 +698,18 @@
         "family": "3A",
         "period": "4",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Gálio"
+            "name": "G\u00e1lio",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Gallium"
+            "name": "Gallium",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Galio"
+            "name": "Galio",
+            "type": "Metaloide"
         }
     },
     {
@@ -628,15 +721,18 @@
         "family": "4A",
         "period": "4",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Germânio"
+            "name": "Germ\u00e2nio",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Germanium"
+            "name": "Germanium",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Germanio"
+            "name": "Germanio",
+            "type": "Metaloide"
         }
     },
     {
@@ -648,15 +744,18 @@
         "family": "5A",
         "period": "4",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Arsênio"
+            "name": "Ars\u00eanio",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Arsenic"
+            "name": "Arsenic",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Arsénico"
+            "name": "Ars\u00e9nico",
+            "type": "Metaloide"
         }
     },
     {
@@ -668,15 +767,18 @@
         "family": "6A",
         "period": "4",
         "block": "p",
-        "type": "nonMetal",
+        "typeClass": "nonMetal",
         "ptBR": {
-            "name": "Selênio"
+            "name": "Sel\u00eanio",
+            "type": "N\u00e3o-metal"
         },
         "enUS": {
-            "name": "Selenium"
+            "name": "Selenium",
+            "type": "Non-metal"
         },
         "esES": {
-            "name": "Selenio"
+            "name": "Selenio",
+            "type": "No metal"
         }
     },
     {
@@ -688,35 +790,41 @@
         "family": "7A",
         "period": "4",
         "block": "p",
-        "type": "halogen",
+        "typeClass": "halogen",
         "ptBR": {
-            "name": "Bromo"
+            "name": "Bromo",
+            "type": "Halog\u00eanio"
         },
         "enUS": {
-            "name": "Bromine"
+            "name": "Bromine",
+            "type": "Halogen"
         },
         "esES": {
-            "name": "Bromo"
+            "name": "Bromo",
+            "type": "Hal\u00f3geno"
         }
     },
     {
         "protons": 36,
-        "mass": 83.80,
+        "mass": 83.8,
         "symbol": "Kr",
         "electron": "[Ar] 3d^10 4s^2 4p^6",
         "group": 18,
         "family": "18",
         "period": "4",
         "block": "p",
-        "type": "nobleGas",
+        "typeClass": "nobleGas",
         "ptBR": {
-            "name": "Criptônio"
+            "name": "Cript\u00f4nio",
+            "type": "G\u00e1s nobre"
         },
         "enUS": {
-            "name": "Krypton"
+            "name": "Krypton",
+            "type": "Noble gas"
         },
         "esES": {
-            "name": "Kriptón"
+            "name": "Kript\u00f3n",
+            "type": "Gas noble"
         }
     },
     {
@@ -728,15 +836,18 @@
         "family": "1A",
         "period": "5",
         "block": "s",
-        "type": "alkali",
+        "typeClass": "alkali",
         "ptBR": {
-            "name": "Rubídio"
+            "name": "Rub\u00eddio",
+            "type": "Alcalino"
         },
         "enUS": {
-            "name": "Rubidium"
+            "name": "Rubidium",
+            "type": "Alkali"
         },
         "esES": {
-            "name": "Rubidio"
+            "name": "Rubidio",
+            "type": "Alcalino"
         }
     },
     {
@@ -748,15 +859,18 @@
         "family": "2A",
         "period": "5",
         "block": "s",
-        "type": "alkaliEarth",
+        "typeClass": "alkaliEarth",
         "ptBR": {
-            "name": "Estroncio"
+            "name": "Estroncio",
+            "type": "Alcalino-terroso"
         },
         "enUS": {
-            "name": "Strontium"
+            "name": "Strontium",
+            "type": "Alkaline earth"
         },
         "esES": {
-            "name": "Estroncio"
+            "name": "Estroncio",
+            "type": "Alcalinot\u00e9rreo"
         }
     },
     {
@@ -768,15 +882,18 @@
         "family": "3B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Ítrio"
+            "name": "\u00cdtrio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Yttrium"
+            "name": "Yttrium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Itrio"
+            "name": "Itrio",
+            "type": "Metal"
         }
     },
     {
@@ -788,15 +905,18 @@
         "family": "4B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Zircônio"
+            "name": "Zirc\u00f4nio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Zirconium"
+            "name": "Zirconium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Circonio"
+            "name": "Circonio",
+            "type": "Metal"
         }
     },
     {
@@ -808,15 +928,18 @@
         "family": "5B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Nióbio"
+            "name": "Ni\u00f3bio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Niobium"
+            "name": "Niobium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Niobio"
+            "name": "Niobio",
+            "type": "Metal"
         }
     },
     {
@@ -828,15 +951,18 @@
         "family": "6B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Molibdênio"
+            "name": "Molibd\u00eanio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Molybdenum"
+            "name": "Molybdenum",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Molibdeno"
+            "name": "Molibdeno",
+            "type": "Metal"
         }
     },
     {
@@ -848,15 +974,18 @@
         "family": "7B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Tecnécio"
+            "name": "Tecn\u00e9cio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Technetium"
+            "name": "Technetium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Tecnecio"
+            "name": "Tecnecio",
+            "type": "Metal"
         }
     },
     {
@@ -868,15 +997,18 @@
         "family": "8B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Rutênio"
+            "name": "Rut\u00eanio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Ruthenium"
+            "name": "Ruthenium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Rutenio"
+            "name": "Rutenio",
+            "type": "Metal"
         }
     },
     {
@@ -888,15 +1020,18 @@
         "family": "9B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Ródio"
+            "name": "R\u00f3dio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Rhodium"
+            "name": "Rhodium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Rodio"
+            "name": "Rodio",
+            "type": "Metal"
         }
     },
     {
@@ -908,15 +1043,18 @@
         "family": "10B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Paládio"
+            "name": "Pal\u00e1dio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Palladium"
+            "name": "Palladium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Paladio"
+            "name": "Paladio",
+            "type": "Metal"
         }
     },
     {
@@ -928,15 +1066,18 @@
         "family": "11B",
         "period": "5",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Prata"
+            "name": "Prata",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Silver"
+            "name": "Silver",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Plata"
+            "name": "Plata",
+            "type": "Metal"
         }
     },
     {
@@ -948,15 +1089,18 @@
         "family": "2A",
         "period": "5",
         "block": "p",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Cádmio"
+            "name": "C\u00e1dmio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Cadmium"
+            "name": "Cadmium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Cádmio"
+            "name": "C\u00e1dmio",
+            "type": "Metal"
         }
     },
     {
@@ -968,15 +1112,18 @@
         "family": "3A",
         "period": "5",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Índio"
+            "name": "\u00cdndio",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Indium"
+            "name": "Indium",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Indio"
+            "name": "Indio",
+            "type": "Semimetal"
         }
     },
     {
@@ -988,15 +1135,18 @@
         "family": "4A",
         "period": "5",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Estanho"
+            "name": "Estanho",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Tin"
+            "name": "Tin",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Estaño"
+            "name": "Esta\u00f1o",
+            "type": "Semimetal"
         }
     },
     {
@@ -1008,15 +1158,18 @@
         "family": "5A",
         "period": "5",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Antimônio"
+            "name": "Antim\u00f4nio",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Antimony"
+            "name": "Antimony",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Antimonio"
+            "name": "Antimonio",
+            "type": "Metaloide"
         }
     },
     {
@@ -1028,15 +1181,18 @@
         "family": "6A",
         "period": "5",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Telúrio"
+            "name": "Tel\u00fario",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Tellurium"
+            "name": "Tellurium",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Telurio"
+            "name": "Telurio",
+            "type": "Metaloide"
         }
     },
     {
@@ -1048,15 +1204,18 @@
         "family": "7A",
         "period": "5",
         "block": "p",
-        "type": "halogen",
+        "typeClass": "halogen",
         "ptBR": {
-            "name": "Iodo"
+            "name": "Iodo",
+            "type": "Halog\u00eanio"
         },
         "enUS": {
-            "name": "Iodine"
+            "name": "Iodine",
+            "type": "Halogen"
         },
         "esES": {
-            "name": "Yodo"
+            "name": "Yodo",
+            "type": "Hal\u00f3geno"
         }
     },
     {
@@ -1068,15 +1227,18 @@
         "family": "18",
         "period": "5",
         "block": "p",
-        "type": "nobleGas",
+        "typeClass": "nobleGas",
         "ptBR": {
-            "name": "Xenônio"
+            "name": "Xen\u00f4nio",
+            "type": "G\u00e1s nobre"
         },
         "enUS": {
-            "name": "Xenon"
+            "name": "Xenon",
+            "type": "Noble gas"
         },
         "esES": {
-            "name": "Xenón"
+            "name": "Xen\u00f3n",
+            "type": "Gas noble"
         }
     },
     {
@@ -1088,15 +1250,18 @@
         "family": "1A",
         "period": "6",
         "block": "s",
-        "type": "alkali",
+        "typeClass": "alkali",
         "ptBR": {
-            "name": "Césio"
+            "name": "C\u00e9sio",
+            "type": "Alcalino"
         },
         "enUS": {
-            "name": "Cesium"
+            "name": "Cesium",
+            "type": "Alkali"
         },
         "esES": {
-            "name": "Cesio"
+            "name": "Cesio",
+            "type": "Alcalino"
         }
     },
     {
@@ -1108,15 +1273,18 @@
         "family": "2A",
         "period": "6",
         "block": "s",
-        "type": "alkaliEarth",
+        "typeClass": "alkaliEarth",
         "ptBR": {
-            "name": "Bário"
+            "name": "B\u00e1rio",
+            "type": "Alcalino-terroso"
         },
         "enUS": {
-            "name": "Barium"
+            "name": "Barium",
+            "type": "Alkaline earth"
         },
         "esES": {
-            "name": "Bario"
+            "name": "Bario",
+            "type": "Alcalinot\u00e9rreo"
         }
     },
     {
@@ -1128,15 +1296,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Lantânio"
+            "name": "Lant\u00e2nio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Lanthanum"
+            "name": "Lanthanum",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Lantano"
+            "name": "Lantano",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1148,15 +1319,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Cério"
+            "name": "C\u00e9rio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Cerium"
+            "name": "Cerium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Cerio"
+            "name": "Cerio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1168,15 +1342,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Praseodímio"
+            "name": "Praseod\u00edmio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Praseodymium"
+            "name": "Praseodymium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Praseodimio"
+            "name": "Praseodimio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1188,15 +1365,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Neodímio"
+            "name": "Neod\u00edmio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Neodymium"
+            "name": "Neodymium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Neodiminio"
+            "name": "Neodiminio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1208,15 +1388,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Promécio"
+            "name": "Prom\u00e9cio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Promethium"
+            "name": "Promethium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Prometio"
+            "name": "Prometio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1228,15 +1411,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Samário"
+            "name": "Sam\u00e1rio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Samarium"
+            "name": "Samarium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Samario"
+            "name": "Samario",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1248,15 +1434,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Európio"
+            "name": "Eur\u00f3pio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Europium"
+            "name": "Europium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Europio"
+            "name": "Europio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1268,15 +1457,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Gadolínio"
+            "name": "Gadol\u00ednio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Gadolinium"
+            "name": "Gadolinium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Gadolinio"
+            "name": "Gadolinio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1288,35 +1480,41 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Térbio"
+            "name": "T\u00e9rbio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Terbium"
+            "name": "Terbium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Terbio"
+            "name": "Terbio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
         "protons": 66,
-        "mass": 162.500,
+        "mass": 162.5,
         "symbol": "Dy",
         "electron": "[Xe] 4f^10 6s^2",
         "group": "3",
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Disprósio"
+            "name": "Dispr\u00f3sio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Dysprosium"
+            "name": "Dysprosium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Disprosio"
+            "name": "Disprosio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1328,15 +1526,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Hólmio"
+            "name": "H\u00f3lmio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Holmium"
+            "name": "Holmium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Holmio"
+            "name": "Holmio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1348,15 +1549,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Érbio"
+            "name": "\u00c9rbio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Erbium"
+            "name": "Erbium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Erbio"
+            "name": "Erbio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1368,15 +1572,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Túlio"
+            "name": "T\u00falio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Thulium"
+            "name": "Thulium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Tulio"
+            "name": "Tulio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1388,15 +1595,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Itérbio"
+            "name": "It\u00e9rbio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Ytterbium"
+            "name": "Ytterbium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Iterbio"
+            "name": "Iterbio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1408,15 +1618,18 @@
         "family": "N/A",
         "period": "6",
         "block": "f",
-        "type": "lanthanides",
+        "typeClass": "lanthanides",
         "ptBR": {
-            "name": "Lutécio"
+            "name": "Lut\u00e9cio",
+            "type": "Lantan\u00eddeo"
         },
         "enUS": {
-            "name": "Lutetium"
+            "name": "Lutetium",
+            "type": "Lanthanide"
         },
         "esES": {
-            "name": "Lutecio"
+            "name": "Lutecio",
+            "type": "Lant\u00e1nido"
         }
     },
     {
@@ -1428,15 +1641,18 @@
         "family": "4B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Háfnio"
+            "name": "H\u00e1fnio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Hafnium"
+            "name": "Hafnium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Hafnio"
+            "name": "Hafnio",
+            "type": "Metal"
         }
     },
     {
@@ -1448,15 +1664,18 @@
         "family": "5B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Tântalo"
+            "name": "T\u00e2ntalo",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Tantalum"
+            "name": "Tantalum",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Tantalio"
+            "name": "Tantalio",
+            "type": "Metal"
         }
     },
     {
@@ -1468,15 +1687,18 @@
         "family": "6B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Tungstênio"
+            "name": "Tungst\u00eanio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Tungsten"
+            "name": "Tungsten",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Wolframio"
+            "name": "Wolframio",
+            "type": "Metal"
         }
     },
     {
@@ -1488,15 +1710,18 @@
         "family": "7B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Rênio"
+            "name": "R\u00eanio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Rhenium"
+            "name": "Rhenium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Renio"
+            "name": "Renio",
+            "type": "Metal"
         }
     },
     {
@@ -1508,15 +1733,18 @@
         "family": "8B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Ósmio"
+            "name": "\u00d3smio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Osmium"
+            "name": "Osmium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Osmio"
+            "name": "Osmio",
+            "type": "Metal"
         }
     },
     {
@@ -1528,15 +1756,18 @@
         "family": "9B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Irídio"
+            "name": "Ir\u00eddio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Iridium"
+            "name": "Iridium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Iridio"
+            "name": "Iridio",
+            "type": "Metal"
         }
     },
     {
@@ -1548,15 +1779,18 @@
         "family": "10B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Platina"
+            "name": "Platina",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Platinum"
+            "name": "Platinum",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Platino"
+            "name": "Platino",
+            "type": "Metal"
         }
     },
     {
@@ -1568,15 +1802,18 @@
         "family": "1B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Ouro"
+            "name": "Ouro",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Gold"
+            "name": "Gold",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Oro"
+            "name": "Oro",
+            "type": "Metal"
         }
     },
     {
@@ -1588,15 +1825,18 @@
         "family": "2B",
         "period": "6",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Mercúrio"
+            "name": "Merc\u00fario",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Mercury"
+            "name": "Mercury",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Mercurio"
+            "name": "Mercurio",
+            "type": "Metal"
         }
     },
     {
@@ -1608,15 +1848,18 @@
         "family": "3A",
         "period": "6",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Tálio"
+            "name": "T\u00e1lio",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Thallium"
+            "name": "Thallium",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Talio"
+            "name": "Talio",
+            "type": "Semimetal"
         }
     },
     {
@@ -1628,15 +1871,18 @@
         "family": "4A",
         "period": "6",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Chumbo"
+            "name": "Chumbo",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Lead"
+            "name": "Lead",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Plomo"
+            "name": "Plomo",
+            "type": "Semimetal"
         }
     },
     {
@@ -1648,15 +1894,18 @@
         "family": "5A",
         "period": "6",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Bismuto"
+            "name": "Bismuto",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Bismuth"
+            "name": "Bismuth",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Bismuto"
+            "name": "Bismuto",
+            "type": "Semimetal"
         }
     },
     {
@@ -1668,15 +1917,18 @@
         "family": "6A",
         "period": "6",
         "block": "p",
-        "type": "metalloid",
+        "typeClass": "metalloid",
         "ptBR": {
-            "name": "Polônio"
+            "name": "Pol\u00f4nio",
+            "type": "Metal\u00f3ide"
         },
         "enUS": {
-            "name": "Polonium"
+            "name": "Polonium",
+            "type": "Metalloid"
         },
         "esES": {
-            "name": "Polonio"
+            "name": "Polonio",
+            "type": "Metaloide"
         }
     },
     {
@@ -1688,15 +1940,18 @@
         "family": "7A",
         "period": "6",
         "block": "p",
-        "type": "halogen",
+        "typeClass": "halogen",
         "ptBR": {
-            "name": "Astato"
+            "name": "Astato",
+            "type": "Halog\u00eanio"
         },
         "enUS": {
-            "name": "Astatine"
+            "name": "Astatine",
+            "type": "Halogen"
         },
         "esES": {
-            "name": "Astato"
+            "name": "Astato",
+            "type": "Hal\u00f3geno"
         }
     },
     {
@@ -1708,15 +1963,18 @@
         "family": "18",
         "period": "6",
         "block": "p",
-        "type": "nobleGas",
+        "typeClass": "nobleGas",
         "ptBR": {
-            "name": "Radônio"
+            "name": "Rad\u00f4nio",
+            "type": "G\u00e1s nobre"
         },
         "enUS": {
-            "name": "Radon"
+            "name": "Radon",
+            "type": "Noble gas"
         },
         "esES": {
-            "name": "Radón"
+            "name": "Rad\u00f3n",
+            "type": "Gas noble"
         }
     },
     {
@@ -1728,15 +1986,18 @@
         "family": "1A",
         "period": "7",
         "block": "s",
-        "type": "alkali",
+        "typeClass": "alkali",
         "ptBR": {
-            "name": "Frâncio"
+            "name": "Fr\u00e2ncio",
+            "type": "Alcalino"
         },
         "enUS": {
-            "name": "Francium"
+            "name": "Francium",
+            "type": "Alkali"
         },
         "esES": {
-            "name": "Francio"
+            "name": "Francio",
+            "type": "Alcalino"
         }
     },
     {
@@ -1748,15 +2009,18 @@
         "family": "2A",
         "period": "7",
         "block": "s",
-        "type": "alkaliEarth",
+        "typeClass": "alkaliEarth",
         "ptBR": {
-            "name": "Rádio"
+            "name": "R\u00e1dio",
+            "type": "Alcalino-terroso"
         },
         "enUS": {
-            "name": "Radium"
+            "name": "Radium",
+            "type": "Alkaline earth"
         },
         "esES": {
-            "name": "Radio"
+            "name": "Radio",
+            "type": "Alcalinot\u00e9rreo"
         }
     },
     {
@@ -1768,15 +2032,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Actínio"
+            "name": "Act\u00ednio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Actinium"
+            "name": "Actinium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Actinio"
+            "name": "Actinio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1788,15 +2055,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Tório"
+            "name": "T\u00f3rio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Thorium"
+            "name": "Thorium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Torio"
+            "name": "Torio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1808,15 +2078,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Protactínio"
+            "name": "Protact\u00ednio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Protactinium"
+            "name": "Protactinium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Protactinio"
+            "name": "Protactinio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1828,15 +2101,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Urânio"
+            "name": "Ur\u00e2nio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Uranium"
+            "name": "Uranium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Uranio"
+            "name": "Uranio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1848,15 +2124,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Neptúnio"
+            "name": "Nept\u00fanio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Neptunium"
+            "name": "Neptunium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Neptunio"
+            "name": "Neptunio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1868,15 +2147,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Plutônio"
+            "name": "Plut\u00f4nio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Plutonium"
+            "name": "Plutonium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Plutonio"
+            "name": "Plutonio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1888,15 +2170,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Amerício"
+            "name": "Amer\u00edcio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Americium"
+            "name": "Americium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Americio"
+            "name": "Americio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1908,15 +2193,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Cúrio"
+            "name": "C\u00fario",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Curium"
+            "name": "Curium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Curio"
+            "name": "Curio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1928,15 +2216,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Berquélio"
+            "name": "Berqu\u00e9lio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Berkelium"
+            "name": "Berkelium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Berkelio"
+            "name": "Berkelio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1948,15 +2239,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Califórnio"
+            "name": "Calif\u00f3rnio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Californium"
+            "name": "Californium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Californio"
+            "name": "Californio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1968,15 +2262,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Einstênio"
+            "name": "Einst\u00eanio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Einsteinium"
+            "name": "Einsteinium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Einstenio"
+            "name": "Einstenio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -1988,15 +2285,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Férmio"
+            "name": "F\u00e9rmio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Fermium"
+            "name": "Fermium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Fermio"
+            "name": "Fermio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -2008,15 +2308,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Mendelévio"
+            "name": "Mendel\u00e9vio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Mendelevium"
+            "name": "Mendelevium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Mendelevio"
+            "name": "Mendelevio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -2028,15 +2331,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Nobélio"
+            "name": "Nob\u00e9lio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Nobelium"
+            "name": "Nobelium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Nobelio"
+            "name": "Nobelio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -2048,15 +2354,18 @@
         "family": "N/A",
         "period": "7",
         "block": "f",
-        "type": "actinides",
+        "typeClass": "actinides",
         "ptBR": {
-            "name": "Laurêncio"
+            "name": "Laur\u00eancio",
+            "type": "Actin\u00eddeo"
         },
         "enUS": {
-            "name": "Lawrencium"
+            "name": "Lawrencium",
+            "type": "Actinide"
         },
         "esES": {
-            "name": "Lawrencio"
+            "name": "Lawrencio",
+            "type": "Act\u00ednido"
         }
     },
     {
@@ -2068,15 +2377,18 @@
         "family": "4B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Rutherfórdio"
+            "name": "Rutherf\u00f3rdio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Rutherfordium"
+            "name": "Rutherfordium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Rutherfordio"
+            "name": "Rutherfordio",
+            "type": "Metal"
         }
     },
     {
@@ -2088,15 +2400,18 @@
         "family": "5B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Dúbnio"
+            "name": "D\u00fabnio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Dubnium"
+            "name": "Dubnium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Dubnio"
+            "name": "Dubnio",
+            "type": "Metal"
         }
     },
     {
@@ -2108,15 +2423,18 @@
         "family": "6B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Seabórgio"
+            "name": "Seab\u00f3rgio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Seaborgium"
+            "name": "Seaborgium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Seaborgio"
+            "name": "Seaborgio",
+            "type": "Metal"
         }
     },
     {
@@ -2128,15 +2446,18 @@
         "family": "7B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Bóhrio"
+            "name": "B\u00f3hrio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Bohrium"
+            "name": "Bohrium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Bohrio"
+            "name": "Bohrio",
+            "type": "Metal"
         }
     },
     {
@@ -2148,15 +2469,18 @@
         "family": "8B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Hássio"
+            "name": "H\u00e1ssio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Hassium"
+            "name": "Hassium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Hasio"
+            "name": "Hasio",
+            "type": "Metal"
         }
     },
     {
@@ -2168,15 +2492,18 @@
         "family": "9B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Meitnério"
+            "name": "Meitn\u00e9rio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Meitnerium"
+            "name": "Meitnerium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Meitnerio"
+            "name": "Meitnerio",
+            "type": "Metal"
         }
     },
     {
@@ -2188,15 +2515,18 @@
         "family": "10B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Darmstádio"
+            "name": "Darmst\u00e1dio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Darmstadtium"
+            "name": "Darmstadtium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Darmstatio"
+            "name": "Darmstatio",
+            "type": "Metal"
         }
     },
     {
@@ -2208,15 +2538,18 @@
         "family": "1B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Roentgênio"
+            "name": "Roentg\u00eanio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Roentgenium"
+            "name": "Roentgenium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Roentgenio"
+            "name": "Roentgenio",
+            "type": "Metal"
         }
     },
     {
@@ -2228,15 +2561,18 @@
         "family": "2B",
         "period": "7",
         "block": "d",
-        "type": "metal",
+        "typeClass": "metal",
         "ptBR": {
-            "name": "Copernício"
+            "name": "Copern\u00edcio",
+            "type": "Metal"
         },
         "enUS": {
-            "name": "Copernicium"
+            "name": "Copernicium",
+            "type": "Metal"
         },
         "esES": {
-            "name": "Copernicio"
+            "name": "Copernicio",
+            "type": "Metal"
         }
     },
     {
@@ -2248,15 +2584,18 @@
         "family": "3A",
         "period": "7",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Nihônio"
+            "name": "Nih\u00f4nio",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Nihonium"
+            "name": "Nihonium",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Nihonio"
+            "name": "Nihonio",
+            "type": "Semimetal"
         }
     },
     {
@@ -2268,15 +2607,18 @@
         "family": "4A",
         "period": "7",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Fleróvio"
+            "name": "Fler\u00f3vio",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Flerovium"
+            "name": "Flerovium",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Flerovio"
+            "name": "Flerovio",
+            "type": "Semimetal"
         }
     },
     {
@@ -2288,15 +2630,18 @@
         "family": "5A",
         "period": "7",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Moscóvio"
+            "name": "Mosc\u00f3vio",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Moscovium"
+            "name": "Moscovium",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Moscovio"
+            "name": "Moscovio",
+            "type": "Semimetal"
         }
     },
     {
@@ -2308,15 +2653,18 @@
         "family": "6A",
         "period": "7",
         "block": "p",
-        "type": "semiMetal",
+        "typeClass": "semiMetal",
         "ptBR": {
-            "name": "Livermório"
+            "name": "Liverm\u00f3rio",
+            "type": "Semi-metal"
         },
         "enUS": {
-            "name": "Livermorium"
+            "name": "Livermorium",
+            "type": "Semi-metal"
         },
         "esES": {
-            "name": "Livermorio"
+            "name": "Livermorio",
+            "type": "Semimetal"
         }
     },
     {
@@ -2328,15 +2676,18 @@
         "family": "7A",
         "period": "7",
         "block": "p",
-        "type": "halogen",
+        "typeClass": "halogen",
         "ptBR": {
-            "name": "Tenessino"
+            "name": "Tenessino",
+            "type": "Halog\u00eanio"
         },
         "enUS": {
-            "name": "Tennessine"
+            "name": "Tennessine",
+            "type": "Halogen"
         },
         "esES": {
-            "name": "Tenesino"
+            "name": "Tenesino",
+            "type": "Hal\u00f3geno"
         }
     },
     {
@@ -2348,15 +2699,18 @@
         "family": "18",
         "period": "7",
         "block": "p",
-        "type": "nobleGas",
+        "typeClass": "nobleGas",
         "ptBR": {
-            "name": "Oganessônio"
+            "name": "Oganess\u00f4nio",
+            "type": "G\u00e1s nobre"
         },
         "enUS": {
-            "name": "Oganesson"
+            "name": "Oganesson",
+            "type": "Noble gas"
         },
         "esES": {
-            "name": "Oganesón"
+            "name": "Oganes\u00f3n",
+            "type": "Gas noble"
         }
     }
 ]

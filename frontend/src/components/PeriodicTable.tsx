@@ -10,15 +10,6 @@ const EventStyles = {
     onWrong: "bg-wrong",
     wrong: "#f87171",
     correct: [
-        // "#00FA9A",
-        // "#00E58C",
-        // "#00D07E",
-        // "#00BC71",
-        // "#00A764",
-        // "#009357",
-        // "#007F4A",
-        // "#006B3D",
-        // "#005730",
         "#00FA9A", "#a3e635", "#fbbf24", "#f97316"
     ]
 }
@@ -237,7 +228,7 @@ export default function PeriodicTable({ game, config, paused, started, lang, tab
                                 onClick={PlayerClick}
                                 config={config.table}
                                 key={path.family + j + i}
-                                type={path.type}
+                                type={path.typeClass}
                                 protons={path.protons}
                                 symbol={path.symbol}
                                 name={path[lang as (typeof Languages)[number]].name}

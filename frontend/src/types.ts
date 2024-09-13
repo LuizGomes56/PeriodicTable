@@ -66,7 +66,7 @@ export const Layout: number[][] = [
 
 export const ButtonWidth = "min-w-24";
 export const ButtonHeight = "h-10";
-export const SectionMaxWidth = "md:max-w-56";
+export const SectionMaxWidth = "md:max-w-[196px]";
 
 export type LocalStorageData = {
     game: GameProps;
@@ -94,16 +94,258 @@ type Elements = {
     family: string;
     period: string;
     block: string;
-    type: string;
+    typeClass: string;
     ptBR: {
         name: string;
+        type: string;
     };
     enUS: {
         name: string;
+        type: string;
     };
     esES: {
         name: string;
+        type: string;
     };
 }
 
-export type GameProps = Elements[]
+export type GameProps = Elements[];
+
+export const Translations = {
+    darkmode: {
+        ptBR: ["Modo Escuro", "Modo Claro"],
+        enUS: ["Dark Mode", "Light Mode"],
+        esES: ["Modo Oscuro", "Modo Claro"]
+    },
+    language: {
+        title: {
+            ptBR: "Idioma",
+            enUS: "Language",
+            esES: "Idioma"
+        },
+        ptBR: "Português",
+        enUS: "English",
+        esES: "Español"
+    },
+    tableSize: {
+        ptBR: "Tamanho",
+        enUS: "Table Size",
+        esES: "Tamaño"
+    },
+    gamemode: {
+        title: {
+            ptBR: "Modo de Jogo",
+            enUS: "Gamemode",
+            esES: "Modo de Juego"
+        },
+        ptBR: {
+            classic: "Clássico",
+            arcade: "Arcade"
+        },
+        enUS: {
+            classic: "Classic",
+            arcade: "Arcade"
+        },
+        esES: {
+            classic: "Clásico",
+            arcade: "Arcade"
+        }
+    },
+    difficulty: {
+        title: {
+            ptBR: "Dificuldade",
+            enUS: "Difficulty",
+            esES: "Dificultad"
+        },
+        ptBR: {
+            custom: "Custom",
+            learn: "Aprender",
+            easy: "Fácil",
+            medium: "Médio",
+            hard: "Difícil",
+            insane: "Insano",
+            extreme: "Extremo",
+            impossible: "Impossível"
+        },
+        enUS: {
+            custom: "Custom",
+            learn: "Learn",
+            easy: "Easy",
+            medium: "Medium",
+            hard: "Hard",
+            insane: "Insane",
+            extreme: "Extreme",
+            impossible: "Impossible"
+        },
+        esES: {
+            custom: "Custom",
+            learn: "Aprender",
+            easy: "Fácil",
+            medium: "Medio",
+            hard: "Difícil",
+            insane: "Insano",
+            extreme: "Extremo",
+            impossible: "Imposible"
+        }
+    },
+    arcadeSettings: {
+        title: {
+            ptBR: "Tempo do Arcade",
+            enUS: "Arcade Time",
+            esES: "Tiempo Arcade"
+        },
+        totalTime: {
+            ptBR: "Total",
+            enUS: "Total",
+            esES: "Total"
+        },
+        penaltyTime: {
+            ptBR: "Penalidade",
+            enUS: "Penalty",
+            esES: "Penalidad"
+        },
+        bonusTime: {
+            ptBR: "Bonus",
+            enUS: "Bonus",
+            esES: "Bonus"
+        }
+    },
+    generalSettings: {
+        title: {
+            ptBR: "Geral",
+            enUS: "General",
+            esES: "General"
+        },
+        errorProtection: {
+            ptBR: "Proteção de Erros",
+            enUS: "Error Protection",
+            esES: "Protección de Errores"
+        },
+        answerPersist: {
+            ptBR: "Resposta Persistente",
+            enUS: "Answer Persist",
+            esES: "Respuesta Persistente"
+        }
+    },
+    tableSettings: {
+        title: {
+            ptBR: "Tabela",
+            enUS: "Table",
+            esES: "Tabla"
+        },
+        name: {
+            ptBR: "Nome",
+            enUS: "Name",
+            esES: "Nombre"
+        },
+        symbol: {
+            ptBR: "Simbolo",
+            enUS: "Symbol",
+            esES: "Símbolo"
+        },
+        protons: {
+            ptBR: "Protons",
+            enUS: "Protons",
+            esES: "Protones"
+        },
+        colors: {
+            ptBR: "Cores",
+            enUS: "Colors",
+            esES: "Colores"
+        }
+    },
+    hintSettings: {
+        title: {
+            ptBR: "Dicas",
+            enUS: "Hints",
+            esES: "Dudas"
+        },
+        name: {
+            ptBR: "Nome",
+            enUS: "Name",
+            esES: "Nombre"
+        },
+        family: {
+            ptBR: "Familia",
+            enUS: "Family",
+            esES: "Familia"
+        },
+        symbol: {
+            ptBR: "Simbolo",
+            enUS: "Symbol",
+            esES: "Símbolo"
+        },
+        mass: {
+            ptBR: "Massa",
+            enUS: "Mass",
+            esES: "Masa"
+        },
+        electron: {
+            ptBR: "Eletrônica",
+            enUS: "Electron",
+            esES: "Electrónica"
+        },
+        group: {
+            ptBR: "Grupo",
+            enUS: "Group",
+            esES: "Grupo"
+        },
+        period: {
+            ptBR: "Período",
+            enUS: "Period",
+            esES: "Período"
+        },
+        block: {
+            ptBR: "Bloco",
+            enUS: "Block",
+            esES: "Bloque"
+        },
+        type: {
+            ptBR: "Tipo",
+            enUS: "Type",
+            esES: "Tipo"
+        },
+        protons: {
+            ptBR: "Protons",
+            enUS: "Protons",
+            esES: "Protones"
+        }
+    },
+    gameStatus: {
+        pause: {
+            ptBR: "Pausar",
+            enUS: "Pause",
+            esES: "Pausar"
+        },
+        resume: {
+            ptBR: "Continuar",
+            enUS: "Resume",
+            esES: "Continuar"
+        },
+        restart: {
+            ptBR: "Reiniciar",
+            enUS: "Restart",
+            esES: "Reiniciar"
+        },
+        attempts: {
+            ptBR: "Tentativas",
+            enUS: "Attempts",
+            esES: "Intentos"
+        },
+        time: {
+            ptBR: "Tempo",
+            enUS: "Time",
+            esES: "Tiempo"
+        },
+        score: {
+            ptBR: "Score",
+            enUS: "Score",
+            esES: "Puntuación"
+        },
+        errors: {
+            ptBR: "Erros",
+            enUS: "Errors",
+            esES: "Errores"
+        }
+    }
+} as const;
