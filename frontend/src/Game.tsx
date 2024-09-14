@@ -96,11 +96,11 @@ const CreateSelector = ({ array, type, onChange, value, language }: { array: str
     )
 }
 
-const CreateSettingsSelector = ({ array, type, onChange, value, language }: { array: string[], language: Lang, type: string, value: string, onChange: (value: any) => void }) => {
+const CreateSettingsSelector = ({ array, type, onChange, value, language }: { array: string[], language: Lang, type: "gamemode" | "difficulty" | "language", value: string, onChange: (value: any) => void }) => {
     return (
         <section className={`${SectionMaxWidth}`}>
             <h2 className="font-semibold text-lg my-2 dark:text-white">
-                {Translations.language.title[language]}
+                {Translations[type].title[language]}
             </h2>
             <span className="grid grid-cols-2 gap-1">
                 <CreateSelector array={Object.values(array)} value={value} type={type} onChange={onChange} language={language} />
@@ -122,7 +122,7 @@ export default function Game() {
     const [game, setGame] = useState<GameProps | null>(null);
     const [settings, setSettings] = useState<GameSettings | null>(null);
     const [darkmode, setDarkmode] = useState<boolean>(false);
-    const [tableSize, setTableSize] = useState<number>(8);
+    const [tableSize, setTableSize] = useState<number>(6);
     const [difficulty, setDifficulty] = useState<Diff>("custom");
     const [language, setLanguage] = useState<Lang>("enUS");
     const [gamemode, setGamemode] = useState<Mode>("classic");
@@ -210,9 +210,22 @@ export default function Game() {
                 language: language,
             };
 
+            const newJSON = Object.assign(main, data);
+
             const newUri = encodeURIComponent(JSON.stringify(main));
 
-            window.localStorage.setItem("periodicTableGame", JSON.stringify(Object.assign(main, data)));
+            let storage = window.localStorage.getItem("periodicTableGame");
+
+            let newObject = {} as LocalStorageData | {};
+
+            if (storage) {
+                let oldJSON = JSON.parse(storage) as LocalStorageData;
+                if (oldJSON) {
+                    newObject = oldJSON;
+                }
+            }
+
+            window.localStorage.setItem("periodicTableGame", JSON.stringify(Object.assign(newObject, newJSON)));
 
             const newUrl = `${window.location.pathname}?data=${newUri}`;
             window.history.replaceState(null, '', newUrl);
@@ -247,16 +260,16 @@ export default function Game() {
     const GetLocalStorage = (x: boolean): void => {
         const sess = window.localStorage.getItem("periodicTableGame");
         if (sess) {
-            const jSess = JSON.parse(sess) as Omit<LocalStorageData, "game" | "settings" | "tableSize">;
+            const jSess = JSON.parse(sess) as Partial<Omit<LocalStorageData, "game" | "settings" | "tableSize">>;
             if (!x) {
-                setDifficulty(jSess.difficulty);
-                setGamemode(jSess.gamemode);
-                setConfig(jSess.config);
+                if (jSess.difficulty) { setDifficulty(jSess.difficulty); }
+                if (jSess.gamemode) { setGamemode(jSess.gamemode); }
+                if (jSess.config) { setConfig(jSess.config); }
             }
-            setDarkmode(jSess.darkmode);
-            setLanguage(jSess.language);
+            if (jSess.darkmode) { setDarkmode(jSess.darkmode); }
+            if (jSess.language) { setLanguage(jSess.language); }
         }
-    }
+    };
 
     useSkipRender(() => {
         const a = config?.arcade.totalTime;
@@ -292,29 +305,34 @@ export default function Game() {
 
     const Load = async () => {
         const Storage = window.localStorage.getItem("periodicTableGame");
-        if (Storage) {
-            const StorageJson = JSON.parse(Storage) as LocalStorageData;
-            if (!StorageJson.game) {
-                const g = await FetchGame();
-                StorageJson.game = g as GameProps;
-                setGame(g);
+        let StorageJson: LocalStorageData | null = Storage ? JSON.parse(Storage) : null;
+
+        let gameData: GameProps | null = null;
+        let settingsData: GameSettings | null = null;
+
+        if (!StorageJson || !StorageJson.game || !StorageJson.settings) {
+            [gameData, settingsData] = await Promise.all([FetchGame(), FetchSettings()]);
+            setGame(gameData);
+            setSettings(settingsData);
+
+            if (!StorageJson) {
+                StorageJson = {} as LocalStorageData;
             }
-            if (!StorageJson.settings) {
-                const s = await FetchSettings();
-                StorageJson.settings = s as GameSettings;
-                setSettings(s);
-                if (!config && s) {
-                    const path = s.difficulties[difficulty];
-                    setConfig(path);
-                    setArcadeTime(path.arcade.totalTime);
-                }
-            }
+            StorageJson.game = gameData as GameProps;
+            StorageJson.settings = settingsData as GameSettings;
+            window.localStorage.setItem("periodicTableGame", JSON.stringify(StorageJson));
         }
         else {
-            const g = await FetchGame();
-            const s = await FetchSettings();
-            setGame(g);
-            setSettings(s);
+            gameData = StorageJson.game;
+            settingsData = StorageJson.settings;
+            setGame(gameData);
+            setSettings(settingsData);
+        }
+
+        if (!config && settingsData) {
+            const path = settingsData.difficulties[difficulty];
+            setConfig(path);
+            setArcadeTime(path.arcade.totalTime);
         }
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -404,7 +422,7 @@ export default function Game() {
                 </div>
             </div>
             <div className="overflow-auto scrollbar flex-auto px-4 max-w-7xl">
-                <section className="mt-4 flex gap-x-8 gap-y-4 justify-center flex-wrap mb-4 md:mb-0">
+                {game && config && <section className="mt-4 flex gap-x-8 gap-y-4 justify-center flex-wrap mb-4 md:mb-0">
                     <div className="flex gap-4">
                     </div>
                     {started ? <>
@@ -441,7 +459,7 @@ export default function Game() {
                             Start
                         </button>
                     }
-                </section>
+                </section>}
                 <div className="flex min-w-max w-full justify-center">
                     {game && config ?
                         <PeriodicTable setCount={setCount} started={started} paused={paused} setOptions={setOptions} setArcadeTime={setArcadeTime} draft={draft} tableSize={tableSize} game={game} config={config} lang={language} /> : <VoidPeriodicTable />}
