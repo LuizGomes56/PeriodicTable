@@ -123,7 +123,7 @@ export default function Game() {
     const [settings, setSettings] = useState<GameSettings | null>(null);
     const [darkmode, setDarkmode] = useState<boolean>(false);
     const [tableSize, setTableSize] = useState<number>(6);
-    const [difficulty, setDifficulty] = useState<Diff>("custom");
+    const [difficulty, setDifficulty] = useState<Diff>("learn");
     const [language, setLanguage] = useState<Lang>("enUS");
     const [gamemode, setGamemode] = useState<Mode>("classic");
     const [started, setStarted] = useState<boolean>(true);
@@ -131,6 +131,7 @@ export default function Game() {
     const [arcadeTime, setArcadeTime] = useState<number>(MinimumArcadeTime);
     const [time, setTime] = useState<number>(0);
     const [options, setOptions] = useState<number[]>([]);
+    const [wrongGuesses, setWrongGuesses] = useState<number>(0);
     const [draft, setDraft] = useState<number>(0);
     const [count, setCount] = useState<number>(0);
     const [config, setConfig] = useState<Difficulty | null>(null);
@@ -166,6 +167,7 @@ export default function Game() {
         setArcadeTime(config?.arcade.totalTime || MinimumArcadeTime);
         setTime(0);
         clearIntervalIfExists();
+        setWrongGuesses(0);
         StartTimers();
         const cells = document.querySelectorAll("table td");
         cells.forEach(cell => {
@@ -286,7 +288,7 @@ export default function Game() {
         if (difficulty === "learn" || gamemode === "classic") {
             setArcadeTime(Infinity);
         }
-        if (settings?.difficulties[difficulty]) {
+        if (settings?.difficulties[difficulty] && difficulty !== "custom") {
             setConfig(settings.difficulties[difficulty]);
         }
     }, [difficulty]);
@@ -423,21 +425,19 @@ export default function Game() {
             </div>
             <div className="overflow-auto scrollbar flex-auto px-4 max-w-7xl">
                 {game && config && <section className="mt-4 flex gap-x-8 gap-y-4 justify-center flex-wrap mb-4 md:mb-0">
-                    <div className="flex gap-4">
-                    </div>
                     {started ? <>
-                        <div className="flex gap-4 my-1">
-                            <button
-                                onClick={PauseOrResume}
-                                type="button"
-                                className={`font-semibold ${paused ? "dark:bg-emerald-300 bg-emerald-500" : "bg-red-500 dark:bg-red-300"} ${ButtonWidth} ${ButtonHeight} py-2 px-4 rounded`}>
-                                {paused ? Translations.gameStatus.resume[language] : Translations.gameStatus.pause[language]}
-                            </button>
+                        <div className="flex gap-2 my-1 flex-col">
                             <button
                                 onClick={RestartEvent}
                                 type="button"
                                 className={`bg-amber-500 dark:bg-yellow-300 ${ButtonWidth} ${ButtonHeight} font-semibold py-2 px-4 rounded`}>
                                 {Translations.gameStatus.restart[language]}
+                            </button>
+                            <button
+                                onClick={PauseOrResume}
+                                type="button"
+                                className={`font-semibold ${paused ? "dark:bg-emerald-300 bg-emerald-500" : "bg-red-500 dark:bg-red-300"} ${ButtonWidth} ${ButtonHeight} py-2 px-4 rounded`}>
+                                {paused ? Translations.gameStatus.resume[language] : Translations.gameStatus.pause[language]}
                             </button>
                         </div>
                         <div className="flex flex-col items-center w-full md:w-auto">
@@ -462,7 +462,7 @@ export default function Game() {
                 </section>}
                 <div className="flex min-w-max w-full justify-center">
                     {game && config ?
-                        <PeriodicTable setCount={setCount} started={started} paused={paused} setOptions={setOptions} setArcadeTime={setArcadeTime} draft={draft} tableSize={tableSize} game={game} config={config} lang={language} /> : <VoidPeriodicTable />}
+                        <PeriodicTable wrongGuesses={wrongGuesses} setWrongGuesses={setWrongGuesses} setCount={setCount} started={started} paused={paused} setOptions={setOptions} setArcadeTime={setArcadeTime} draft={draft} tableSize={tableSize} game={game} config={config} lang={language} /> : <VoidPeriodicTable />}
                 </div>
             </div>
         </div>

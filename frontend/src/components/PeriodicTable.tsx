@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Difficulty, Families, GameProps, GroupColors, Languages, Layout } from "../types";
 
 type ChangePropertyProps = { width: string, height: string, symbolSize: string, truncateAt: string, truncateSize: string, protonSize: string };
@@ -136,8 +136,34 @@ const SpecialCell = ({ exec }: { exec: number }) => {
     )
 }
 
-export default function PeriodicTable({ game, config, paused, started, lang, tableSize, draft, setOptions, setCount, setArcadeTime }: { game: GameProps, paused: boolean, started: boolean, setOptions: React.Dispatch<React.SetStateAction<number[]>>, setCount: React.Dispatch<React.SetStateAction<number>>, setArcadeTime: React.Dispatch<React.SetStateAction<number>>, config: Difficulty, draft: number, lang: string, tableSize: number }) {
-    const [wrongGuesses, setWrongGuesses] = useState<number>(0);
+export default function PeriodicTable(
+    {
+        game,
+        config,
+        paused,
+        started,
+        lang,
+        tableSize,
+        draft,
+        wrongGuesses,
+        setWrongGuesses,
+        setOptions,
+        setCount,
+        setArcadeTime
+    }: {
+        game: GameProps,
+        paused: boolean,
+        started: boolean,
+        wrongGuesses: number,
+        setWrongGuesses: React.Dispatch<React.SetStateAction<number>>,
+        setOptions: React.Dispatch<React.SetStateAction<number[]>>,
+        setCount: React.Dispatch<React.SetStateAction<number>>,
+        setArcadeTime: React.Dispatch<React.SetStateAction<number>>,
+        config: Difficulty,
+        draft: number,
+        lang: string,
+        tableSize: number
+    }) {
 
     let n = 0;
 
@@ -176,15 +202,12 @@ export default function PeriodicTable({ game, config, paused, started, lang, tab
                 return prev.filter(num => num !== (local - 1));
             });
 
-            if (config.answerPersist) {
-                cell.classList.add(EventStyles.onCorrect, 'cursor-default');
-                cell.style.backgroundColor = EventStyles.correct[wrongGuesses] || EventStyles.correct[EventStyles.correct.length - 1];
-            }
-            else {
-                cell.classList.add(EventStyles.onCorrect, 'cursor-default');
+            cell.classList.add(EventStyles.onCorrect, 'cursor-default');
+            cell.style.backgroundColor = EventStyles.correct[wrongGuesses] || EventStyles.correct[EventStyles.correct.length - 1];
+
+            if (!config.answerPersist) {
                 setTimeout(() => {
                     cell.classList.remove(EventStyles.onCorrect);
-                    cell.style.backgroundColor = EventStyles.correct[wrongGuesses] || EventStyles.correct[EventStyles.correct.length - 1];
                 }, VanishTimeOut);
             }
             setWrongGuesses(0);
@@ -212,8 +235,8 @@ export default function PeriodicTable({ game, config, paused, started, lang, tab
                     {Families.map((f, i) => <th className={`p-0 font-semibold dark:text-white ${TableSize.height} ${TableSize.protonSize}`} key={i}>{f}</th>)}
                 </tr>
             </thead>
-            <tbody>{Layout.map((row, i) => {
-                return <tr key={i}>
+            <tbody>{Layout.map((row, i) => (
+                <tr key={i}>
                     {row.map((cell, j) => {
                         if (cell > 1) {
                             n += 15;
@@ -237,7 +260,7 @@ export default function PeriodicTable({ game, config, paused, started, lang, tab
                         else { return <VoidCell key={j} /> }
                     })}
                 </tr>
-            })}</tbody>
+            ))}</tbody>
         </table>
     )
 }
