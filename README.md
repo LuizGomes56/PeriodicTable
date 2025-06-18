@@ -1,10 +1,10 @@
 # PeriodicTable Game
 
-Hosted on westboca.tutorlol.com/react/periodictable
+## (Hosted here)[westboca.tutorlol.com/react/periodictable]
 
-Developed using React, Type Script, TS-Node backend
+Developed using React and a TypeScript backend
 
-Remake of initial version published on westboca.tutorlol.com/games/periodictable previously made using jQuery and frontend-only
+Remake of initial version published at `westboca.tutorlol.com/games/periodictable` previously made using jQuery and frontend-only
 
 Total Hours of work: 49
 Total Days until completion: 5
